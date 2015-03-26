@@ -118,4 +118,4 @@ var Org14 = result[13].originalURL;
 var Org15 = result[14].originalURL;
 var Org16 = result[15].originalURL;
 
-document.getElementById(step-1).style.backgroundImage = 'url(' + P1 + ')';
+document.getElementById(step - 1).style.backgroundImage = 'url(' + P1 + ')';
