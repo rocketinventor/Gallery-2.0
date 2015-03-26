@@ -82,7 +82,7 @@ var P14 = result[13].imageURL;
 var P15 = result[14].imageURL;
 var P16 = result[15].imageURL;
 
-//These will set values for the painting urls
+//These will set values for the painting thumnail urls
 var Th1 = result[0].thumbnailURL200;
 var Th2 = result[1].thumbnailURL200;
 var Th3 = result[2].thumbnailURL200;
@@ -100,7 +100,7 @@ var Th14 = result[13].thumbnailURL200;
 var Th15 = result[14].thumbnailURL200;
 var Th16 = result[15].thumbnailURL200;
 
-//These will set values for the original urls
+//These will set values for the original image urls
 var Org1 = result[0].originalURL;
 var Org2 = result[1].originalURL;
 var Org3 = result[2].originalURL;
@@ -118,4 +118,22 @@ var Org14 = result[13].originalURL;
 var Org15 = result[14].originalURL;
 var Org16 = result[15].originalURL;
 
-document.getElementById(step - 1).style.backgroundImage = 'url(' + P1 + ')';
+//These will set the variables for the profile images
+var UT1 = result[0].user_thumbnailURL;
+var UT2 = result[1].user_thumbnailURL;
+var UT3 = result[2].user_thumbnailURL;
+var UT4 = result[3].user_thumbnailURL;
+var UT5 = result[4].user_thumbnailURL;
+var UT6 = result[5].user_thumbnailURL;
+var UT7 = result[6].user_thumbnailURL;
+var UT8 = result[7].user_thumbnailURL;
+var UT9 = result[8].user_thumbnailURL;
+var UT10 = result[9].user_thumbnailURL;
+var UT11 = result[10].user_thumbnailURL;
+var UT12 = result[11].user_thumbnailURL;
+var UT13 = result[12].user_thumbnailURL;
+var UT14 = result[13].user_thumbnailURL;
+var UT15 = result[14].user_thumbnailURL;
+var UT16 = result[15].user_thumbnailURL;
+
+document.getElementById(step-1).style.backgroundImage = 'url(' + P1 + ')';
