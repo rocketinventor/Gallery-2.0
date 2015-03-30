@@ -136,4 +136,4 @@ var UT14 = result[13].user_thumbnailURL;
 var UT15 = result[14].user_thumbnailURL;
 var UT16 = result[15].user_thumbnailURL;
 
-document.getElementById(step-1).style.backgroundImage = 'url(' + P1 + ')';
+document.getElementById("step-1").style.backgroundImage = 'url(' + P1 + ')';
