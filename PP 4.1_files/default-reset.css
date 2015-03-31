@@ -317,6 +317,8 @@ video {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  width: 1024px;
+  height: 768px;
 }
 
 .innerBg {
