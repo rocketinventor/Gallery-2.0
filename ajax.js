@@ -137,3 +137,4 @@ var UT15 = result[14].user_thumbnailURL;
 var UT16 = result[15].user_thumbnailURL;
 
 document.getElementById("UT1").src=UT1;
+console.log(UT1)
