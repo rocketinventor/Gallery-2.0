@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+<head>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/trianglify/0.1.5/trianglify.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js'></script>
+
+  <style>
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  body {
+    background: #E1D38A;
+    background-size: cover;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 20%
+  }
+  
+  .content {
+    width: 400px;
+    background: #fff;
+    padding: 30px;
+    text-align: center;
+    z-index: 995;
+    box-shadow: 0 3px 36px 0 rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    opacity: 0.7;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.2s
+  }
+  
+  .content:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    margin-top: -10px;
+    color: #444
+  }
+  </style>
+
+</head>
+
+<body>
+
+  <a class="content" href="javascript:history.go(0)">
+    <h2>Change Background</h2> </a>
+
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+  var rn = Math.floor(Math.random() * 150 + 60);
+  var rs = Math.floor(Math.random() * 11 + 4);
+  var t = new Trianglify({
+    x_gradient: Trianglify.colorbrewer.Spectral[rs],
+    noiseIntensity: 0,
+    cellsize: rn
+  });
+  var pattern = t.generate(window.innerWidth, window.innerWidth + 200);
+  document.body.setAttribute("style", "background-image: " + pattern.dataUrl);
+  </script>
+
+</body>
+
+</html>
