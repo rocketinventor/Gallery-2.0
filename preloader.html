@@ -46,9 +46,6 @@
   </div>
 
   <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
   var t = new Trianglify({
     x_gradient: Trianglify.colorbrewer[1],
     noiseIntensity: .1,
