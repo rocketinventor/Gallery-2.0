@@ -47,7 +47,7 @@
   </div>
 
   <script>
-  var rn = random()/20-3.5;
+  var rn = Math.floor(Math.random() * 150 + 60);
   var t = new Trianglify({
     x_gradient: Trianglify.colorbrewer[1],
     noiseIntensity: 0.1,
