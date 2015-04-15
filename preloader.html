@@ -42,18 +42,22 @@
 <body>
 
   <div class="content">
-    <h2>"I'm crazy of le psykopaint"</h2>
-    <p>-Salvador Dali-</p>
+    <h2 id="quote">"I'm crazy of le psykopaint"</h2>
+    <p id="quoteCredit">-Salvador Dali-</p>
   </div>
 
   <script>
   var t = new Trianglify({
     x_gradient: Trianglify.colorbrewer[1],
-    noiseIntensity: .1,
+    noiseIntensity: 0.1,
     cellsize: 80
   });
+  var quote="If I knew, I wouldn't have cut off my ear";
+  var quoteCredit="Van Gogh";
   var pattern = t.generate(window.innerWidth, window.innerWidth + 200);
   document.body.setAttribute("style", "background-image: " + pattern.dataUrl);
+  document.getElementById("quote").innerHTML=quote;
+  document.getElementById("quoteCredit").innerHTML="-"+quoteCredit+"-";
   </script>
 
 </body>
