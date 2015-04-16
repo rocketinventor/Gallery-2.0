@@ -22,6 +22,10 @@
     padding-top: 20%
   }
   
+  p {
+    color: #555;
+  }
+  
   .content {
     width: 400px;
     background: #fff;
@@ -70,7 +74,7 @@
   quoteCredit[5] = "Charles Darwin";
   var pattern = t.generate(window.innerWidth, window.innerWidth + 200);
   document.body.setAttribute("style", "background-image: " + pattern.dataUrl);
-  document.getElementById("quote").innerHTML = "\""+quote[q]+"\"";
+  document.getElementById("quote").innerHTML = "\"" + quote[q] + "\"";
   document.getElementById("quoteCredit").innerHTML = "-" + quoteCredit[q] + "-";
   </script>
 
