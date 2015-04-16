@@ -42,8 +42,8 @@
 <body>
 
   <div class="content">
-    <h2 id="quote">"I'm crazy of le psykopaint"</h2>
-    <p id="quoteCredit">-Salvador Dali-</p>
+    <h2 id="quote">"Please enable javascript"</h2>
+    <p id="quoteCredit">-Your webrowser-</p>
   </div>
 
   <script>
@@ -53,6 +53,7 @@
     noiseIntensity: 0.1,
     cellsize: rn
   });
+  var q = 0
   var quote = new Array();
   quote[0] = "I'm crazy of le psykopaint";
   quote[1] = "If I knew, I wouldn't have cut off my ear";
@@ -69,8 +70,8 @@
   quoteCredit[5] = "Charles Darwin";
   var pattern = t.generate(window.innerWidth, window.innerWidth + 200);
   document.body.setAttribute("style", "background-image: " + pattern.dataUrl);
-  document.getElementById("quote").innerHTML = quote;
-  document.getElementById("quoteCredit").innerHTML = "-" + quoteCredit + "-";
+  document.getElementById("quote").innerHTML = "\""+quote[q]+"\"";
+  document.getElementById("quoteCredit").innerHTML = "-" + quoteCredit[q] + "-";
   </script>
 
 </body>
