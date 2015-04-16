@@ -53,21 +53,20 @@
     noiseIntensity: 0.1,
     cellsize: rn
   });
-  var quote = new Array()
-  quote[0] = "I'm crazy of le psykopaint"
-  quote[1] = "If I knew, I wouldn't have cut off my ear"
-  quote[2] = "If you can't explain it simply, you don't understand it well enough"
-  quote[3] = "It doesn't suck as much as I thought it would"
-  quote[4] = "They stole my idea"
-  quote[5] = "It's evolution, baby!"
-  ;
-  var quoteCredit = new Array()
-  quoteCredit[0] = "Salvador Dali"
-  quoteCredit[1] = "Van Gogh"
-  quoteCredit[2] = "Albert Einstien"
-  quoteCredit[3] = "Grumpy cat"
-  quoteCredit[4] = "Pablo Picasso"
-  quoteCredit[5] = "Charles Darwin"
+  var quote = new Array();
+  quote[0] = "I'm crazy of le psykopaint";
+  quote[1] = "If I knew, I wouldn't have cut off my ear";
+  quote[2] = "If you can't explain it simply, you don't understand it well enough";
+  quote[3] = "It doesn't suck as much as I thought it would";
+  quote[4] = "They stole my idea";
+  quote[5] = "It's evolution, baby!";
+  var quoteCredit = new Array();
+  quoteCredit[0] = "Salvador Dali";
+  quoteCredit[1] = "Van Gogh";
+  quoteCredit[2] = "Albert Einstien";
+  quoteCredit[3] = "Grumpy cat";
+  quoteCredit[4] = "Pablo Picasso";
+  quoteCredit[5] = "Charles Darwin";
   var pattern = t.generate(window.innerWidth, window.innerWidth + 200);
   document.body.setAttribute("style", "background-image: " + pattern.dataUrl);
   document.getElementById("quote").innerHTML = quote;
