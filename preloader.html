@@ -58,7 +58,7 @@
     cellsize: rn
   });
 
-  var q = Math.floor(Math.random() * (15 - 0 + 1)) + 0;
+  var q = Math.floor(Math.random() * (21 - 0 + 1)) + 0;
   var quote = new Array();
   var quoteCredit = new Array();
   quote[0] = "I'm crazy of le psykopaint";
@@ -95,6 +95,17 @@
   quoteCredit[15] = "Popeye";
   quote[16] = "Psykopaint is the key to the heart";
   quoteCredit[16] = "Ahmed Deedat";
+  quote[17] = "Psykopaint is too random for me"
+  quoteCredit[17] = "Jackson Pollock"
+  quote[18] = "I kinda like the polygon subdivision stuff"
+  quoteCredit[18] = "Kandinsky"
+  quote[19] = "WTF"
+  quoteCredit[19] = "Duchamp"
+  quote[20] = "Saturation to the max is the way I role"
+  quoteCredit[20] = "Chagal"
+  quote[21] = "I wish I could tag websites, also"
+  quoteCredit[21] = "Baksy"
+
  var pattern = t.generate(window.innerWidth, window.innerWidth + 200);
   document.body.setAttribute("style", "background-image: " + pattern.dataUrl);
   document.getElementById("quote").innerHTML = "\"" + quote[q] + "\"";
