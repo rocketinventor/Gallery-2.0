@@ -57,20 +57,19 @@
     noiseIntensity: 0.1,
     cellsize: rn
   });
-  var q = 0;
 
+  var q = Math.floor(Math.random() * (15 - 0 + 1)) + 0;
   var quote = new Array();
   var quoteCredit = new Array();
-
   quote[0] = "I'm crazy of le psykopaint";
   quoteCredit[0] = "Salvador Dali";
   quote[1] = "If I knew, I wouldn't have cut off my ear";
   quoteCredit[1] = "Van Gogh";
   quote[2] = "If you can't explain it simply, you don't understand it well enough";
   quoteCredit[2] = "Albert Einstien";
-  quote[3] = "It doesn't suck as much as I thought it would";
+  quote[3] = "It doesn't suck as much as I thought it would...";
   quoteCredit[3] = "Grumpy cat";
-  quote[4] = "They stole my idea";
+  quote[4] = "They stole my idea!!!";
   quoteCredit[4] = "Pablo Picasso";
   quote[5] = "It's evolution, baby!";
   quoteCredit[5] = "Charles Darwin";
@@ -80,21 +79,23 @@
   quoteCredit[7] = "Van Gogh";
   quote[8] = "Painters can transform a sun into a yellow spot, but Psykopaint can transform a yellow spot into the sun";
   quoteCredit[8] = "Pablo Picasso";
-  quote[9] = "A secretary, a chair, and a computer with psykopaint; what else does a man need to be happy?";
+  quote[9] = "A secretary, a chair, and a computer with Psykopaint; what else does a man need to be happy?";
   quoteCredit[9] = "Albert Einstien";
-  quote[10] = "Only two things are infinite, the possibilities of Psyкopaint and human stupidity, and I'm not sure about the former";
+  quote[10] = "Only two things are infinite, the possibilities of Psyкopaint and human stupidity, and I'm not sure about the latter!";
   quoteCredit[10] = "Albert Einstien";
-  quote[11] = "Who needs dots? I love Psykopaint lots!";
-  quoteCredit[11] = "Georges Pierre Seurat - 2 seconds ago";
-  quote[12] = "Psykopaint - not strength or intelligence - is the key to unlocking our potential";
+  quote[11] = "Who needs dots?<br>I love Psykopaint lots!";
+  quoteCredit[11] = "Georges Pierre Seurat, 2 seconds ago";
+  quote[12] = "Psykopaint <br>-- not strength or intelligence --<br>is the key to unlocking our potential";
   quoteCredit[12] = "Winston Churchill";
-  quote[13] = "Art and psykopaint are the only way to run away without leaving home";
+  quote[13] = "Art and Psykopaint are the only way to run away without leaving home";
   quoteCredit[13] = "Twyla Tharp";
-  quote[14] = "A single mark of Psykopaint brush makes us say, 'I'm not only good a painter, but also a gifted artist'";
+  quote[14] = "A single mark of Psykopaint brush makes us say, 'I'm not only a good painter, but also a gifted artist.";
   quoteCredit[14] = "Ralph Waldo Emerson";
   quote[15] = "I ams what I ams, but with Psykopaint I ams transformed";
-  quoteCredit[15] = "popeye";
-  var pattern = t.generate(window.innerWidth, window.innerWidth + 200);
+  quoteCredit[15] = "Popeye";
+  quote[16] = "Psykopaint is the key to the heart";
+  quoteCredit[16] = "Ahmed Deedat";
+ var pattern = t.generate(window.innerWidth, window.innerWidth + 200);
   document.body.setAttribute("style", "background-image: " + pattern.dataUrl);
   document.getElementById("quote").innerHTML = "\"" + quote[q] + "\"";
   document.getElementById("quoteCredit").innerHTML = "-" + quoteCredit[q] + "-";
