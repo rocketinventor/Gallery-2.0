@@ -3410,65 +3410,6 @@ body {
   left: 26px;
   width: 320px;
   height: 240px;
-  /*
-      .gif_shadow {
-        z-index: 3;
-        position: absolute;
-        top: 18px;
-        left: 26px;
-        width: 320px;
-        height: 240px;
-        background: transparent url(../../img/entry_img_shadow.png) no-repeat 0 0;
-        cursor: pointer;
-      }
-      */
-  /*
-      .reply_sign {
-        z-index: 4;
-        position: absolute;
-        left: 247px;
-        top: 252px;
-        width: 100px;
-        height: 38px;
-        background: transparent url(../../img/entry_noComment.png) no-repeat 0 0;
-        cursor: pointer;
-      }*/
-  /*
-    .entry_comment_container {
-      z-index: 4;
-      position: absolute;
-      left: 292px;
-      top: 252px;
-      width: 58px;
-      height: 38px;
-      background: transparent url(../../img/entry_comment.png) no-repeat 0 0;
-      cursor: pointer;
-    }
-    */
-  /*
-    .gotothread_sign {
-      left: 213px;
-      top: 252px;
-      width: 140px;
-      height: 38px;
-      background: transparent url(../../img/entry_gotoThread.png) no-repeat 0 0;
-      cursor: pointer;
-    }
-    */
-  /*
-    .entry_comment {
-      position: absolute;
-      left: 28px;
-      top: 8px;
-      font-family: @altFontFamily;
-      font-size: 13px;
-      color: @commentColor;
-      padding: 0;
-      text-align: center;
-      width: 25px;
-      .rotate(-4deg);
-    }
-    */
 }
 
 .entry_object_container .entry_object .img_container .entry_img {
