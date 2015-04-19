@@ -63,7 +63,7 @@ ajax({
   console.log(result);
   var firstPaintingsId = result[0].id;
   console.log(firstPaintingsId);
-});
+
 //These will set values for the painting urls
 var P1 = result[0].imageURL;
 var P2 = result[1].imageURL;
@@ -137,4 +137,4 @@ var UT15 = result[14].user_thumbnailURL;
 var UT16 = result[15].user_thumbnailURL;
 
 document.getElementById("UT1").src=UT1;
-console.log(UT1)
+});
