@@ -443,7 +443,11 @@ td {
 
 body {
   margin: 0;
-  font-family: "BunnigrrrlshandwritingYOFFRg", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "BunnigrrrlshandwritingYOFFRg",
+  "Helvetica Neue",
+  Helvetica,
+  Arial,
+  sans-serif;
   font-size: 19px;
   line-height: 1.4;
   color: #363636;
@@ -2596,7 +2600,6 @@ a.thumbnail:hover {
 }
 
 html,
-
 body {
   background: #e5e5e5 url(http://beta2.pagie.net/assets/menu/backgrounds/1024/paper9.jpg);
 }
