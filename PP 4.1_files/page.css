@@ -11,49 +11,10 @@ section {
   display: block;
 }
 
-audio,
-canvas,
-video {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-}
-
-audio:not([controls]) {
-  display: none;
-}
-
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-}
-
-a:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-
-a:hover,
-a:active {
-  outline: 0;
-}
-
-sub,
-sup {
-  position: relative;
-  font-size: 75%;
-  line-height: 0;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
 }
 
 img {
@@ -205,22 +166,6 @@ q:after {
 
 small {
   font-size: 85%;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
 }
 
 ul,
@@ -630,145 +575,6 @@ hr {
 
 strong {
   font-weight: bold;
-}
-
-em {
-  font-style: italic;
-}
-
-.muted {
-  color: #c1c1c1;
-}
-
-abbr {
-  font-size: 90%;
-  text-transform: uppercase;
-  border-bottom: 1px dotted #ddd;
-  cursor: help;
-}
-
-blockquote {
-  padding: 0 0 0 15px;
-  margin: 0 0 1.4;
-  border-left: 5px solid #eeeeee;
-}
-
-blockquote p {
-  margin-bottom: 0;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.75;
-}
-
-blockquote small {
-  display: block;
-  line-height: 1.4;
-  color: #c1c1c1;
-}
-
-blockquote small:before {
-  content: '\2014 \00A0';
-}
-
-blockquote.pull-right {
-  float: right;
-  padding-left: 0;
-  padding-right: 15px;
-  border-left: 0;
-  border-right: 5px solid #eeeeee;
-}
-
-blockquote.pull-right p,
-blockquote.pull-right small {
-  text-align: right;
-}
-
-q:before,
-q:after,
-blockquote:before,
-blockquote:after {
-  content: "";
-}
-
-address {
-  display: block;
-  margin-bottom: 1.4;
-  line-height: 1.4;
-  font-style: normal;
-}
-
-small {
-  font-size: 100%;
-}
-
-cite {
-  font-style: normal;
-}
-
-code,
-pre {
-  padding: 0 3px 2px;
-  font-family: Menlo, Monaco, "Courier New", monospace;
-  font-size: 18px;
-  color: #363636;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-code {
-  padding: 3px 4px;
-  color: #d14;
-  background-color: #f7f7f9;
-  border: 1px solid #e1e1e8;
-}
-
-pre {
-  display: block;
-  padding: 0.19999999999999996;
-  margin: 0 0 0.7;
-  font-size: 12px;
-  line-height: 1.4;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  white-space: pre;
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
-pre.prettyprint {
-  margin-bottom: 1.4;
-}
-
-pre code {
-  padding: 0;
-  background-color: transparent;
-}
-
-form {
-  margin: 0 0 1.4;
-}
-
-fieldset {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-legend {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: 2.0999999999999996;
-  font-size: 28.5px;
-  line-height: 2.8;
-  color: #363636;
-  border: 0;
-  border-bottom: 1px solid #eee;
 }
 
 label,
@@ -2201,32 +2007,6 @@ a.thumbnail:hover {
 html,
 body {
   background: #e5e5e5 url(http://beta2.pagie.net/assets/menu/backgrounds/1024/paper9.jpg);
-}
-
-#flashContent {
-  min-height: 650px;
-}
-
-.btn_connectfb {
-  width: 208px;
-  height: 30px;
-  display: none;
-  background: transparent url(../../img/btn_connectfb_sprite.png) no-repeat 0 0px;
-  cursor: pointer;
-}
-
-.btn_connectfb:hover {
-  text-decoration: none;
-  background: transparent url(http://psykogif.com/img/btn_connectfb_sprite.png) no-repeat 0 -30px;
-}
-
-.btn_connectedfb {
-  display: none;
-  position: absolute;
-  top: 7px;
-  right: 5px;
-  width: 186px;
-  z-index: 10;
 }
 
 .btn_nav {
