@@ -1,64 +1,17 @@
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-nav,
-section {
-  display: block;
-}
-
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  border: 0;
-  -ms-interpolation-mode: bicubic;
-}
-
-button,
-input,
-select,
-textarea {
-  margin: 0;
-  font-size: 100%;
-  vertical-align: middle;
-}
-
-[hidden] {
-  display: none;
-}
-
-.clearfix {
-  *zoom: 1;
-}
-
-@media print {}
-
 body {
   margin: 0;
-  font-family: "BunnigrrrlshandwritingYOFFRg",
-  "Helvetica Neue",
-  Helvetica,
-  Arial,
-  sans-serif;
+  font-family: "BunnigrrrlshandwritingYOFFRg", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 19px;
   line-height: 1.4;
   color: #363636;
   background-color: #000000;
   letter-spacing: 1px;
-}
-[class*="span"] {
-  float: left;
-  margin-left: 20px;
 }
 
 @font-face {
