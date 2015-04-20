@@ -485,39 +485,6 @@ a:hover {
   margin-left: 20px;
 }
 
-.container {
-  width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-  *zoom: 1;
-}
-
-.container:before,
-.container:after {
-  display: table;
-  content: "";
-}
-
-.container:after {
-  clear: both;
-}
-
-.container-fluid {
-  padding-left: 20px;
-  padding-right: 20px;
-  *zoom: 1;
-}
-
-.container-fluid:before,
-.container-fluid:after {
-  display: table;
-  content: "";
-}
-
-.container-fluid:after {
-  clear: both;
-}
-
 @font-face {
   font-family: 'WarugakiRegular';
   src: url('../lib/../../fonts/warugaki-webfont.eot');
@@ -2439,10 +2406,6 @@ body {
   background: #e5e5e5 url(http://beta2.pagie.net/assets/menu/backgrounds/1024/paper9.jpg);
 }
 
-.itemContainer {
-  margin: 0px auto 0px auto;
-}
-
 #flashContent {
   min-height: 650px;
 }
@@ -2579,11 +2542,6 @@ body {
 
 .userTag li li a:hover {
   background: transparent url(../../img/btn_loggedin_menu_sprite.png) no-repeat 0 -28px;
-}
-
-.entry_object_container {
-  float: left;
-  position: relative;
 }
 
 .wall_owner {
