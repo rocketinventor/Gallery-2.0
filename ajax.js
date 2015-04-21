@@ -137,20 +137,7 @@ var UT15 = result[14].user_thumbnailURL;
 var UT16 = result[15].user_thumbnailURL;
 
 //this creates the user thumnails in the DOM
-document.getElementById("UT1").src=UT1;
-document.getElementById("UT2").src=UT2
-document.getElementById("UT3").src=UT3
-document.getElementById("UT4").src=UT4
-document.getElementById("UT5").src=UT5
-document.getElementById("UT6").src=UT6
-document.getElementById("UT7").src=UT7
-document.getElementById("UT8").src=UT8
-document.getElementById("UT9").src=UT9
-document.getElementById("UT10").src=UT10
-document.getElementById("UT11").src=UT11
-document.getElementById("UT12").src=UT12
-document.getElementById("UT13").src=UT13
-document.getElementById("UT14").src=UT14
-document.getElementById("UT15").src=UT15
-document.getElementById("UT16").src=UT16
+for(var i = 0; i < result.length; i++){
+  document.getElementById("UT" + (i + 1)).src = result[i].user_thumbnailURL;
+}
 });
