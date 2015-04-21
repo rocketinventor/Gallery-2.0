@@ -118,25 +118,7 @@ ajax({
   var Org15 = result[14].originalURL;
   var Org16 = result[15].originalURL;
 
-  //These will set the variables for the profile images
-  var UT1 = result[0].user_thumbnailURL;
-  var UT2 = result[1].user_thumbnailURL;
-  var UT3 = result[2].user_thumbnailURL;
-  var UT4 = result[3].user_thumbnailURL;
-  var UT5 = result[4].user_thumbnailURL;
-  var UT6 = result[5].user_thumbnailURL;
-  var UT7 = result[6].user_thumbnailURL;
-  var UT8 = result[7].user_thumbnailURL;
-  var UT9 = result[8].user_thumbnailURL;
-  var UT10 = result[9].user_thumbnailURL;
-  var UT11 = result[10].user_thumbnailURL;
-  var UT12 = result[11].user_thumbnailURL;
-  var UT13 = result[12].user_thumbnailURL;
-  var UT14 = result[13].user_thumbnailURL;
-  var UT15 = result[14].user_thumbnailURL;
-  var UT16 = result[15].user_thumbnailURL;
-
-  //this creates the user thumnails in the DOM
+  //this creates the user thumnails in the DOM using the array
   for (var i = 0; i < result.length; i++) {
     document.getElementById("UT" + (i + 1)).src = result[i].user_thumbnailURL;
   }
