@@ -82,24 +82,6 @@ ajax({
   var P15 = result[14].imageURL;
   var P16 = result[15].imageURL;
 
-  //These will set values for the painting thumnail urls
-  var Th1 = result[0].thumbnailURL200;
-  var Th2 = result[1].thumbnailURL200;
-  var Th3 = result[2].thumbnailURL200;
-  var Th4 = result[3].thumbnailURL200;
-  var Th5 = result[4].thumbnailURL200;
-  var Th6 = result[5].thumbnailURL200;
-  var Th7 = result[6].thumbnailURL200;
-  var Th8 = result[7].thumbnailURL200;
-  var Th9 = result[8].thumbnailURL200;
-  var Th10 = result[9].thumbnailURL200;
-  var Th11 = result[10].thumbnailURL200;
-  var Th12 = result[11].thumbnailURL200;
-  var Th13 = result[12].thumbnailURL200;
-  var Th14 = result[13].thumbnailURL200;
-  var Th15 = result[14].thumbnailURL200;
-  var Th16 = result[15].thumbnailURL200;
-
   //These will set values for the original image urls
   var Org1 = result[0].originalURL;
   var Org2 = result[1].originalURL;
@@ -121,5 +103,9 @@ ajax({
   //this creates the user thumnails in the DOM using the array
   for (var i = 0; i < result.length; i++) {
     document.getElementById("UT" + (i + 1)).src = result[i].user_thumbnailURL;
+  }
+  //This sets the paintings to thier thumnails images
+  for (var i = 0; i < result.length; i++) {
+    document.getElementById("Th" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL200 + ')';
   }
 });
