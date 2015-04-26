@@ -88,10 +88,12 @@ ajax({
   }
   //This sets the paintings to thier thumnails images
   for (var i = 0; i < result.length; i++) {
-    document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL200 + ')';
+    document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL50 + ')';
   }
-    //This updates the paintings to thier fullsize images
-  for (var i = 0; i < result.length; i++) {
-    document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].imageURL + ')';
-  }
+  //This updates the paintings to thier fullsize images
+  setTimeout(function() {
+    for (var i = 0; i < result.length; i++) {
+      document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].imageURL + ')';
+    };
+  }, 900);
 });
