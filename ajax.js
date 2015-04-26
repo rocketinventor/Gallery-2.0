@@ -64,24 +64,6 @@ ajax({
   var firstPaintingsId = result[0].id;
   console.log(firstPaintingsId);
 
-  //These will set values for the painting urls
-  var P1 = result[0].imageURL;
-  var P2 = result[1].imageURL;
-  var P3 = result[2].imageURL;
-  var P4 = result[3].imageURL;
-  var P5 = result[4].imageURL;
-  var P6 = result[5].imageURL;
-  var P7 = result[6].imageURL;
-  var P8 = result[7].imageURL;
-  var P9 = result[8].imageURL;
-  var P10 = result[9].imageURL;
-  var P11 = result[10].imageURL;
-  var P12 = result[11].imageURL;
-  var P13 = result[12].imageURL;
-  var P14 = result[13].imageURL;
-  var P15 = result[14].imageURL;
-  var P16 = result[15].imageURL;
-
   //These will set values for the original image urls
   var Org1 = result[0].originalURL;
   var Org2 = result[1].originalURL;
@@ -107,5 +89,9 @@ ajax({
   //This sets the paintings to thier thumnails images
   for (var i = 0; i < result.length; i++) {
     document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL200 + ')';
+  }
+    //This updates the paintings to thier fullsize images
+  for (var i = 0; i < result.length; i++) {
+    document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].imageURL + ')';
   }
 });
