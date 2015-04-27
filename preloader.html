@@ -123,7 +123,7 @@
   quoteCredit[29] = "OJ Simpson"
   quote[30] = "I may have been high as shit when I painted those melting clocks but no amount of weed could give me the idea for psykopaint"
   quoteCredit[30] = "Salvador Dali"
- var pattern = t.generate(window.innerWidth, window.innerWidth + 200);
+  var pattern = t.generate(window.innerWidth, window.innerWidth + 200);
   document.body.setAttribute("style", "background-image: " + pattern.dataUrl);
   document.getElementById("quote").innerHTML = "\"" + quote[q] + "\"";
   document.getElementById("quoteCredit").innerHTML = "-" + quoteCredit[q] + "-";
