@@ -82,6 +82,8 @@ ajax({
   var Org15 = result[14].originalURL;
   var Org16 = result[15].originalURL;
 
+  document.getElementById("U16").innerHTML = result[15].user_name;
+
   //this creates the user thumnails in the DOM using the array
   for (var i = 0; i < result.length; i++) {
     document.getElementById("UT" + (i + 1)).src = result[i].user_thumbnailURL;
@@ -96,4 +98,5 @@ ajax({
       document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].imageURL + ')';
     };
   }, 900);
+
 });
