@@ -92,9 +92,11 @@
     outline: none;
   }
   
+  .float-left {
     float: left
   }
   
+  .float-right {
     float: right
   }
   </style>
@@ -104,10 +106,12 @@
     <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
   </div>
   <div class="nav">
+    <div class="float-left">
       <button id="prev" onclick="return impress().prev()">
         <img src="http://www.psykosoft.net/assets/images/arrowLeft.png" alt="(<)">
       </button>
     </div>
+    <div class="float-right">
       <button id="next" onclick="impress().next()">
         <img src="http://www.psykosoft.net/assets/images/arrowRight.png" alt="(<)">
       </button>
