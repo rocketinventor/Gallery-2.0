@@ -47,7 +47,7 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 0;
+    z-index: auto;
     width: 100%;
     height: 100%;
   }
@@ -89,7 +89,7 @@
     <p>Your browser <b>doesn't support the features required</b> by the new PP gallery, so you are presented with a simplified version of it this time.</p>
     <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
   </div>
-  <div class="nav">
+  <div class="nav" style="position: relative; z-index: 1;">
     <div style="float: left" ;>
       <button id="prev" onclick="return impress().prev()">
         <img src="http://www.psykosoft.net/assets/images/arrowLeft.png" alt="(<)">
