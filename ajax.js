@@ -82,7 +82,10 @@ ajax({
   var Org15 = result[14].originalURL;
   var Org16 = result[15].originalURL;
 
-  document.getElementById("U16").innerHTML = result[15].user_name;
+  //This sets the paintings to thier thumnails images
+  for (var i = 0; i < result.length; i++) {
+    document.getElementById("U" + (i + 1)).innerHTML = result[i].user_name;
+  }
 
   //this creates the user thumnails in the DOM using the array
   for (var i = 0; i < result.length; i++) {
