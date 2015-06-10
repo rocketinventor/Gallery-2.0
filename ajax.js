@@ -91,10 +91,10 @@ ajax({
   for (var i = 0; i < result.length; i++) {
     document.getElementById("UT" + (i + 1)).src = result[i].user_thumbnailURL;
   }
-  // //This sets the paintings to thier thumnails images
-  // for (var i = 0; i < result.length; i++) {
-  //   document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL50 + ')';
-  // }
+  //This sets the paintings to thier thumnails images
+  for (var i = 0; i < result.length; i++) {
+    document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL50 + ')';
+  }
   This updates the paintings to thier fullsize images
   setTimeout(function() {
     for (var i = 0; i < result.length; i++) {
