@@ -56,7 +56,7 @@ ajax({
   "dataType": "JSON",
   "data": JSON.stringify({
     "serviceName": "Main",
-    "methodName": "getLatestPaintings",
+    "methodName": "getStaffPickedPaintings",
     "parameters": ["0", "16", "1"]
   })
 }).then(function(result) {
