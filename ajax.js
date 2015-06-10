@@ -95,7 +95,7 @@ ajax({
   for (var i = 0; i < result.length; i++) {
     document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL50 + ')';
   }
-  This updates the paintings to thier fullsize images
+  //This updates the paintings to thier fullsize images
   setTimeout(function() {
     for (var i = 0; i < result.length; i++) {
       document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].imageURL + ')';
