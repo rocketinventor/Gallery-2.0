@@ -83,15 +83,6 @@
     transform: translateY(-50%);
   }
   
-  button {
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-  }
-  
   .float-left {
     float: left
   }
@@ -107,14 +98,10 @@
   </div>
   <div class="nav">
     <div class="float-left">
-      <button id="prev" onclick="return impress().prev()">
-        <img src="http://www.psykosoft.net/assets/images/arrowLeft.png" alt="(<)">
-      </button>
+      <img src="http://www.psykosoft.net/assets/images/arrowLeft.png" alt="(<)" id="prev" onclick="return impress().prev()">
     </div>
     <div class="float-right">
-      <button id="next" onclick="impress().next()">
-        <img src="http://www.psykosoft.net/assets/images/arrowRight.png" alt="(<)">
-      </button>
+      <img src="http://www.psykosoft.net/assets/images/arrowRight.png" alt="(<)" id="next" onclick="impress().next()">
     </div>
   </div>
   <div class="bg strut-surface">
@@ -164,7 +151,7 @@ transform: scale(1,1)">
                     <div id="U1"></div>
                   </div>
                 </div>
-              </div>
+              </div>nav
 
               <div class="componentContainer " style="top: 256px; left: 341.33px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
                 <div class="transformContainer" style="-webkit-transform: scale(1,1);
