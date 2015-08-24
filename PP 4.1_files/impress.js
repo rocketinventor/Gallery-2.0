@@ -662,7 +662,7 @@ function startPres(document, window) {
 
         // START 
         // by selecting step defined in url or first step of the presentation
-        goto(getElementFromHash() || steps[0], 0);
+        goto(getElementFromHash() || steps[16], 0); //sets default "step" to go to, set it as overview
       }, false);
 
       body.classList.add("impress-disabled");
