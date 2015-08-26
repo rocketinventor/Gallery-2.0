@@ -85,7 +85,7 @@ ajax({
   var Org15 = result[14].originalURL;
   var Org16 = result[15].originalURL;
 
-  //This sets the paintings to thier thumnails images
+  //This adds the usenames to the page
   for (var i = 0; i < result.length; i++) {
     document.getElementById("U" + (i + 1)).innerHTML = result[i].user_name;
   }
