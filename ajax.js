@@ -27,12 +27,14 @@ function ajax(parameters) {
         if (parameters.dataType === "JSON") {
           try {
             resolve(JSON.parse(xhr.responseText));
-          } catch (e) {
+          }
+          catch (e) {
             reject(Error(e));
           }
 
         }
-      } else {
+      }
+      else {
         reject(Error("request failed; error code:" + xhr.statusText));
       }
 
@@ -94,7 +96,7 @@ ajax({
   for (var i = 0; i < result.length; i++) {
     document.getElementById("UT" + (i + 1)).src = result[i].user_thumbnailURL;
   }
-  
+
   //This sets the paintings to thier thumnails images
   for (var i = 0; i < result.length; i++) {
     document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL50 + ')';

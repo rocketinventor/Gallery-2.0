@@ -190,7 +190,8 @@ function startPres(document, window) {
     if (!impressSupported) {
       // we can't be sure that `classList` is supported
       body.className += " impress-not-supported ";
-    } else {
+    }
+    else {
       body.classList.remove("impress-not-supported");
       body.classList.add("impress-supported");
     }
@@ -269,7 +270,8 @@ function startPres(document, window) {
       var root = byId(rootId);
       if (previousInit) {
         var canvas = root.children[0];
-      } else {
+      }
+      else {
         var canvas = document.createElement("div");
       }
 
@@ -292,22 +294,22 @@ function startPres(document, window) {
       var onStepEnter = function(step) {
         if (lastEntered !== step) {
           triggerEvent(step, "impress:stepenter");
-          
+
           lastEntered = step;
         }
-        
-      //switch from thumbnail image to full res
-      //for current image, and before image, and after too
-      //the URL's are from the ajax.js generated array
-      for (var x = -1; x <= 1; x++){
-        //get step #from url
-        //it's current state is a hack to get the slide #
-        //it will have to be rewritten to get the slide id internally (from variable)
-        //also on the overview, I want it to switch back to thumnail sized images
-        var i = parseInt(window.location.hash.replace("#/painting/step-", ""), 0) -1 + x;
-        document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + images[i].imageURL + ')';
-      }
-        
+
+        //switch from thumbnail image to full res
+        //for current image, and before image, and after too
+        //the URL's are from the ajax.js generated array
+        for (var x = -1; x <= 1; x++) {
+          //get step #from url
+          //it's current state is a hack to get the slide #
+          //it will have to be rewritten to get the slide id internally (from variable)
+          //also on the overview, I want it to switch back to thumnail sized images
+          var i = parseInt(window.location.hash.replace("#/painting/step-", ""), 0) - 1 + x;
+          document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + images[i].imageURL + ')';
+        }
+
       };
 
       // `onStepLeave` is called whenever the step element is left
@@ -450,7 +452,8 @@ function startPres(document, window) {
       var getStep = function(step) {
         if (typeof step === "number") {
           step = step < 0 ? steps[steps.length + step] : steps[step];
-        } else if (typeof step === "string") {
+        }
+        else if (typeof step === "string") {
           step = byId(step);
         }
         return (step && step.id && stepsData["impress-" + step.id]) ? step : null;
