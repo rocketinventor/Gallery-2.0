@@ -8,6 +8,8 @@
  * @config {string} [dataType] The dataType to return. Default is "TEXT". could be "TEXT", "JSON" and "XML"
  */
 
+var images;
+
 function ajax(parameters) {
   return new Promise(function(resolve, reject) {
     var xhr = new XMLHttpRequest();
@@ -60,6 +62,7 @@ ajax({
     "parameters": ["0", "16", "1"]
   })
 }).then(function(result) {
+  images = result;
   console.log(result);
   var firstPaintingsId = result[0].id;
   console.log(firstPaintingsId);
@@ -91,15 +94,10 @@ ajax({
   for (var i = 0; i < result.length; i++) {
     document.getElementById("UT" + (i + 1)).src = result[i].user_thumbnailURL;
   }
+  
   //This sets the paintings to thier thumnails images
   for (var i = 0; i < result.length; i++) {
     document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL50 + ')';
   }
-  //This updates the paintings to thier fullsize images
-  setTimeout(function() {
-    for (var i = 0; i < result.length; i++) {
-      document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].imageURL + ')';
-    };
-  }, 900);
 
 });

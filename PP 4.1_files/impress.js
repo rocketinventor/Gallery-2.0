@@ -148,9 +148,8 @@ function startPres(document, window) {
     // `getElementFromHash` returns an element located by id from hash part of
     // window location.
     var getElementFromHash = function() {
-      // get id from url # by removing `#` or `#/` from the beginning,
-      // so both "fallback" `#slide-id` and "enhanced" `#/slide-id` will work
-      return byId(window.location.hash.replace(/^#\/?/, ""));
+      // get id from url # by removing `#/painting/` from the beginning
+      return byId(window.location.hash.replace("#/painting/", ""));
     };
 
     // `computeWindowScale` counts the scale factor between window size and size
@@ -293,8 +292,22 @@ function startPres(document, window) {
       var onStepEnter = function(step) {
         if (lastEntered !== step) {
           triggerEvent(step, "impress:stepenter");
+          
           lastEntered = step;
         }
+        
+      //switch from thumbnail image to full res
+      //for current image, and before image, and after too
+      //the URL's are from the ajax.js generated array
+      for (var x = -1; x <= 1; x++){
+        //get step #from url
+        //it's current state is a hack to get the slide #
+        //it will have to be rewritten to get the slide id internally (from variable)
+        //also on the overview, I want it to switch back to thumnail sized images
+        var i = parseInt(window.location.hash.replace("#/painting/step-", ""), 0) -1 + x;
+        document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + images[i].imageURL + ')';
+      }
+        
       };
 
       // `onStepLeave` is called whenever the step element is left
