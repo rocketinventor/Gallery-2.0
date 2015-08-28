@@ -855,7 +855,7 @@ function startPres(document, window) {
 
   document.addEventListener("keydown", function(e) {
     if (e.keyCode == 27) {
-      impress().goto('overview');
+      impress().goto('0');
     }
   }, false);
 
