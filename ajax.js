@@ -55,58 +55,59 @@ function ajax(parameters) {
 }
 
 function ajaxLoad() {
-ajax({
-  "url": "http://www.psykopaint.com/php/dataservice/amfservices/?contentType=application/json",
-  "type": "POST",
-  "dataType": "JSON",
-  "data": JSON.stringify({
-    "serviceName": "Main",
-    "methodName": "getStaffPickedPaintings",
-    "parameters": [(0 + page * 16), "16", "1"]
-  })
-}).then(function(result) {
-  images = result;
-  console.log(result);
-  var firstPaintingsId = result[0].id;
-  console.log(firstPaintingsId);
-  console.log("Page " + page);
+  ajax({
+    "url": "http://www.psykopaint.com/php/dataservice/amfservices/?contentType=application/json",
+    "type": "POST",
+    "dataType": "JSON",
+    "data": JSON.stringify({
+      "serviceName": "Main",
+      "methodName": "getStaffPickedPaintings",
+      "parameters": [(0 + page * 16), "16", "1"]
+    })
+  }).then(function(result) {
+    images = result;
+    console.log(result);
+    var firstPaintingsId = result[0].id;
+    console.log(firstPaintingsId);
+    console.log("Page " + page);
 
-  //These will set values for the original image urls
-  var Org1 = result[0].originalURL;
-  var Org2 = result[1].originalURL;
-  var Org3 = result[2].originalURL;
-  var Org4 = result[3].originalURL;
-  var Org5 = result[4].originalURL;
-  var Org6 = result[5].originalURL;
-  var Org7 = result[6].originalURL;
-  var Org8 = result[7].originalURL;
-  var Org9 = result[8].originalURL;
-  var Org10 = result[9].originalURL;
-  var Org11 = result[10].originalURL;
-  var Org12 = result[11].originalURL;
-  var Org13 = result[12].originalURL;
-  var Org14 = result[13].originalURL;
-  var Org15 = result[14].originalURL;
-  var Org16 = result[15].originalURL;
+    //These will set values for the original image urls
+    var Org1 = result[0].originalURL;
+    var Org2 = result[1].originalURL;
+    var Org3 = result[2].originalURL;
+    var Org4 = result[3].originalURL;
+    var Org5 = result[4].originalURL;
+    var Org6 = result[5].originalURL;
+    var Org7 = result[6].originalURL;
+    var Org8 = result[7].originalURL;
+    var Org9 = result[8].originalURL;
+    var Org10 = result[9].originalURL;
+    var Org11 = result[10].originalURL;
+    var Org12 = result[11].originalURL;
+    var Org13 = result[12].originalURL;
+    var Org14 = result[13].originalURL;
+    var Org15 = result[14].originalURL;
+    var Org16 = result[15].originalURL;
 
-  //This adds the usenames to the page
-  for (var i = 0; i < result.length; i++) {
-    document.getElementById("U" + (i + 1)).innerHTML = result[i].user_name;
-  }
+    //This adds the usenames to the page
+    for (var i = 0; i < result.length; i++) {
+      document.getElementById("U" + (i + 1)).innerHTML = result[i].user_name;
+    }
 
-  //this creates the user thumnails in the DOM using the array
-  for (var i = 0; i < result.length; i++) {
-    document.getElementById("UT" + (i + 1)).src = result[i].user_thumbnailURL;
-  }
+    //this creates the user thumnails in the DOM using the array
+    for (var i = 0; i < result.length; i++) {
+      document.getElementById("UT" + (i + 1)).src = result[i].user_thumbnailURL;
+    }
 
-  //This sets the paintings to thier thumnails images
-  for (var i = 0; i < result.length; i++) {
-    document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL50 + ')';
-  }
+    //This sets the paintings to thier thumnails images
+    for (var i = 0; i < result.length; i++) {
+      document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL50 + ')';
+    }
 
-  //Set the first picture to full res
+    //Set the first picture to full res
+    document.getElementById("P1").style.backgroundImage = 'url(' + images[0].imageURL + ')';
 
-});
+  });
 }
 
 page = 0;
@@ -114,21 +115,19 @@ ajaxLoad();
 
 //fetch & switch to next page
 function nextPage() {
-  page = page++;
+  page = page + 1;
   ajaxLoad(page);
-  console.log("Page " + page);
 }
 
 //switch to prev page (unless on first page)
 function prevPage() {
   if (page > 0) {
-    page = page--;
+    page = page - 1;
     ajaxLoad(page);
   }
   else {
     page = 0;
   }
-  console.log("Page " + page);
 }
 
 //If nessasry, data could be prefetched and stored
