@@ -9,6 +9,7 @@
  */
 
 var images;
+var page;
 
 function ajax(parameters) {
   return new Promise(function(resolve, reject) {
@@ -53,7 +54,7 @@ function ajax(parameters) {
   });
 }
 
-
+function ajaxLoad() {
 ajax({
   "url": "http://www.psykopaint.com/php/dataservice/amfservices/?contentType=application/json",
   "type": "POST",
@@ -61,13 +62,14 @@ ajax({
   "data": JSON.stringify({
     "serviceName": "Main",
     "methodName": "getStaffPickedPaintings",
-    "parameters": ["0", "16", "1"]
+    "parameters": [(0 + page * 16), "16", "1"]
   })
 }).then(function(result) {
   images = result;
   console.log(result);
   var firstPaintingsId = result[0].id;
   console.log(firstPaintingsId);
+  console.log("Page " + page);
 
   //These will set values for the original image urls
   var Org1 = result[0].originalURL;
@@ -102,4 +104,31 @@ ajax({
     document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL50 + ')';
   }
 
+  //Set the first picture to full res
+
 });
+}
+
+page = 0;
+ajaxLoad();
+
+//fetch & switch to next page
+function nextPage() {
+  page = page++;
+  ajaxLoad(page);
+  console.log("Page " + page);
+}
+
+//switch to prev page (unless on first page)
+function prevPage() {
+  if (page > 0) {
+    page = page--;
+    ajaxLoad(page);
+  }
+  else {
+    page = 0;
+  }
+  console.log("Page " + page);
+}
+
+//If nessasry, data could be prefetched and stored
