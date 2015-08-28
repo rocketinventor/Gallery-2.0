@@ -104,6 +104,15 @@
       <img src="http://www.psykosoft.net/assets/images/arrowRight.png" alt="(<)" id="next">
     </div>
   </div>
+  <script>
+    document.getElementById("next").addEventListener("click", function() {
+      impress().next();
+    });
+  
+    document.getElementById("prev").addEventListener("click", function() {
+      impress().prev();
+    });
+  </script>
   <div class="bg strut-surface">
     <div class="bg innerBg strut-slide-overview">
       <div id="impress" style="position: absolute; transform-origin: left top 0px; transition: all 1000ms ease-in-out 0ms; -webkit-transition: all 1000ms ease-in-out 0ms; transform-style: preserve-3d; top: 50%; left: 50%; transform: perspective(1000px) scale(1,1);">

@@ -860,11 +860,3 @@ function startPres(document, window) {
   }, false);
 
 }
-
-document.getElementById("next").addEventListener("click", function() {
-  impress().next()
-})
-
-document.getElementById("prev").addEventListener("click", function() {
-  impress().prev()
-})
