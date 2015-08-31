@@ -606,6 +606,10 @@ function startPres(document, window) {
         var prev = steps.indexOf(activeStep) - 1;
         prev = prev >= 0 ? steps[prev] : steps[steps.length - 1];
 
+      if (window.location.hash=="#/painting/step-1") {
+        prevPage();
+      }
+
         return goto(prev);
       };
 
@@ -613,6 +617,10 @@ function startPres(document, window) {
       var next = function() {
         var next = steps.indexOf(activeStep) + 1;
         next = next < steps.length ? steps[next] : steps[0];
+
+        if (window.location.hash=="#/painting/step-16") {
+          nextPage();
+        }
 
         return goto(next);
       };

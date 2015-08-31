@@ -106,10 +106,18 @@
   </div>
   <script>
     document.getElementById("next").addEventListener("click", function() {
+      if (window.location.hash=="#/painting/step-16") {
+        nextPage();
+        impress().next();
+      }
       impress().next();
     });
   
     document.getElementById("prev").addEventListener("click", function() {
+      if (window.location.hash == "#/painting/step-1") {
+        prevPage();
+        impress().prev();
+      }
       impress().prev();
     });
   </script>
