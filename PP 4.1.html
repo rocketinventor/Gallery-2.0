@@ -105,7 +105,26 @@
     </div>
   </div>
   <script>
+    function locationHashChanged() {
+      if (location.hash == "#/painting/0" && page == 0) {
+          document.getElementById("prev").style.display = "none";
+      }
+      else {
+        //hide button if there are no more prev slides
+        // if (location.hash == "#/painting/step-1" && page == 0) {
+        //   document.getElementById("prev").style.display = "none";
+        // } else
+        // //otherwise, show the button
+        // {
+          document.getElementById("prev").style.display = "block";
+        // }
+      }
+    }
+    window.onhashchange = locationHashChanged;
+    locationHashChanged();
+  
     document.getElementById("next").addEventListener("click", function() {
+      locationHashChanged();
       if (window.location.hash == "#/painting/0") {
         nextPage();
       }
@@ -116,9 +135,11 @@
         }
         impress().next();
       }
+      locationHashChanged();
     });
 
     document.getElementById("prev").addEventListener("click", function() {
+      locationHashChanged();
       if (window.location.hash == "#/painting/0") {
         prevPage();
       }
@@ -130,7 +151,12 @@
           }
           impress().prev();
         }
+        // What the button will do if it is enabled && there are no prev slides
+        else {
+          impress().prev();
+        }
       }
+      locationHashChanged();
     });
   </script>
   <div class="bg strut-surface">
