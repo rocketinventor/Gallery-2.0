@@ -123,11 +123,13 @@
         prevPage();
       }
       else {
-        if (window.location.hash == "#/painting/step-1") {
-          prevPage();
+        if (page > 0) {
+          if (window.location.hash == "#/painting/step-1") {
+            prevPage();
+            impress().prev();
+          }
           impress().prev();
         }
-        impress().prev();
       }
     });
   </script>
