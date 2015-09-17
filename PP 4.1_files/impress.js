@@ -5,6 +5,8 @@ function startPres(document, window) {
 
   var innerBg = document.querySelector('.innerBg');
 
+/*global images*/
+
   /**
    * impress.js
    *
@@ -308,6 +310,9 @@ function startPres(document, window) {
           //also on the overview, I want it to switch back to thumnail sized images
           var i = parseInt(window.location.hash.replace("#/painting/step-", ""), 0) - 1 + x;
           document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + images[i].imageURL + ')';
+          //set height and width
+          document.getElementById("P" + (i+ 1)).style.height = images[i].height;
+          document.getElementById("P" + (i+ 1)).style.width = images[i].width;
         }
 
       };
