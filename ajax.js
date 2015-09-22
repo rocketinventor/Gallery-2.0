@@ -10,6 +10,38 @@
 
 var images;
 var page;
+var methodName;
+
+function getMethodName() {
+  var i;
+  var methodPrev = methodName;
+  
+  methodName = "getLatestPaintings";
+  // if /gallery/
+ 
+  i = location.hash.split("#/painting/").pop();
+
+  if (i == 0) {
+    methodName = "getLatestPaintings";
+  }
+  if (i == 1) {
+    methodName = "getStaffPickedPaintings";
+  }
+  if (i == 2) {
+    methodName = "getMostViewedPaintings";
+  }
+  if (i == 3) {
+    methodName = "getMostFavoritedPaintings";
+  }
+  //the following is not avaliable on the 
+  if (i == 4) {
+    methodName = "getMostCommentedPaintings";
+  }
+
+  if (methodName != methodPrev) {
+    page = 0;
+  }
+}
 
 function ajax(parameters) {
   return new Promise(function(resolve, reject) {
@@ -53,15 +85,15 @@ function ajax(parameters) {
     xhr.send(parameters.data);
   });
 }
-
 function ajaxLoad() {
+  getMethodName();
   ajax({
     "url": "http://www.psykopaint.com/php/dataservice/amfservices/?contentType=application/json",
     "type": "POST",
     "dataType": "JSON",
     "data": JSON.stringify({
       "serviceName": "Main",
-      "methodName": "getStaffPickedPaintings",
+      "methodName": methodName,
       "parameters": [(0 + page * 16), "16", "1"]
     })
   }).then(function(result) {
