@@ -17,30 +17,41 @@ function getMethodName() {
   var methodPrev = methodName;
   
   methodName = "getLatestPaintings";
+  var str;
+  // get #/blah/this/0
+  str = location.hash.split("#/").pop();
+  str = str.substring(0, str.indexOf("/"));
+  str = location.hash.split("#/" + str + "/").pop();
+  i = str.substring(0, str.indexOf("/"));
+
   // if /gallery/
- 
-  i = location.hash.split("#/painting/").pop();
+  str = location.hash.split("#/").pop();
+  str = str.substring(0, str.indexOf("/"));
+  if (str == "gallery") {
+  
+    if (i == 0) {
+      methodName = "getLatestPaintings";
+    }
+    if (i == 1) {
+      methodName = "getStaffPickedPaintings";
+    }
+    if (i == 2) {
+      methodName = "getMostViewedPaintings";
+    }
+    if (i == 3) {
+      methodName = "getMostFavoritedPaintings";
+    }
+    //the following is not avaliable on the 
+    if (i == 4) {
+      methodName = "getMostCommentedPaintings";
+    }
+  
+    if (methodName != methodPrev) {
+      page = 0;
+    }
+  }
 
-  if (i == 0) {
-    methodName = "getLatestPaintings";
-  }
-  if (i == 1) {
-    methodName = "getStaffPickedPaintings";
-  }
-  if (i == 2) {
-    methodName = "getMostViewedPaintings";
-  }
-  if (i == 3) {
-    methodName = "getMostFavoritedPaintings";
-  }
-  //the following is not avaliable on the 
-  if (i == 4) {
-    methodName = "getMostCommentedPaintings";
-  }
-
-  if (methodName != methodPrev) {
-    page = 0;
-  }
+//else painting or user gallery
 }
 
 function ajax(parameters) {
