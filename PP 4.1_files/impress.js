@@ -5,7 +5,10 @@ function startPres(document, window) {
 
   var innerBg = document.querySelector('.innerBg');
 
-/*global images*/
+/*
+ * global impress
+ * global images
+*/
 
   /**
    * impress.js
