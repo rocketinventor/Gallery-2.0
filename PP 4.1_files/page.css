@@ -6,7 +6,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "BunnigrrrlshandwritingYOFFRg", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "WarugakiRegular";
   font-size: 19px;
   line-height: 1.4;
   color: #363636;
@@ -16,15 +16,22 @@ body {
 
 @font-face {
   font-family: 'WarugakiRegular';
-  src: url('../lib/../../fonts/warugaki-webfont.eot');
-  src: url('../lib/../../fonts/warugaki-webfont.eot?#iefix') format('embedded-opentype'), url('../lib/../../fonts/warugaki-webfont.woff') format('woff'), url('../lib/../../fonts/warugaki-webfont.ttf') format('truetype'), url('../lib/../../fonts/warugaki-webfont.svg#WarugakiRegular') format('svg');
+  src: url('http://www.psykopaint.com/lab/html5/fonts/warugaki-webfont.eot');
+  src: url('http://www.psykopaint.com/lab/html5/fonts/warugaki-webfont.eot?#iefix') format('embedded-opentype'),
+  url('http://www.psykopaint.com/lab/html5/fonts/warugaki-webfont.woff') format('woff'),
+  url('http://www.psykopaint.com/lab/html5/fonts/warugaki-webfont.ttf') format('truetype'),
+  url('http://www.psykopaint.com/lab/html5/fonts/warugaki-webfont.svg#WarugakiRegular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'HelveticaNeueBlackCondensed';
-  src: url('../../fonts/HelveticaNeueLTPro-BlkCn.ttf') format('truetype'), url('../../fonts/HelveticaNeueLTPro-BlkCn.svg') format('svg');
+  font-family: 'BunnigrrrlshandwritingYOFFRg';
+  src: url('http://www.psykopaint.com/lab/html5/fonts/bunnigirlshandyoff-webfont.eot');
+  src: url('http://www.psykopaint.com/lab/html5/fonts/bunnigirlshandyoff-webfont.eot?#iefix') format('embedded-opentype'),
+  url('http://www.psykopaint.com/lab/html5/fonts/bunnigirlshandyoff-webfont.woff') format('woff'),
+  url('http://www.psykopaint.com/lab/html5/fonts/bunnigirlshandyoff-webfont.ttf') format('truetype'),
+  url('http://www.psykopaint.com/lab/html5/fonts/bunnigirlshandyoff-webfont.svg#BunnigrrrlshandwritingYOFFRg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
