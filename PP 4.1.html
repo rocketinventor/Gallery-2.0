@@ -83,6 +83,22 @@
       transform: translateY(-50%);
     }
     
+    .invert {
+      filter: invert(0);
+      -webkit-filter: invert(0);
+      -moz-filter: invert(0);
+      -o-filter: invert(0);
+      -ms-filter: invert(0);
+    }
+    
+    img.invert:hover {
+      filter: invert(100%);
+      -webkit-filter: invert(100%);
+      -moz-filter: invert(100%);
+      -o-filter: invert(100%);
+      -ms-filter: invert(100%);
+    }
+    
     .float-left {
       float: left
     }
@@ -98,15 +114,15 @@
   </div>
   <div class="nav">
     <div class="float-left">
-      <img src="http://www.psykosoft.net/assets/images/arrowLeft.png" alt="(<)" id="prev">
+      <img class="invert" src="http://www.psykosoft.net/assets/images/arrowLeft.png" alt="(<)" id="prev">
     </div>
     <div class="float-right">
-      <img src="http://www.psykosoft.net/assets/images/arrowRight.png" alt="(<)" id="next">
+      <img class="invert" src="http://www.psykosoft.net/assets/images/arrowRight.png" alt="(<)" id="next">
     </div>
   </div>
   <script>
     function locationHashChanged() {
-      if (location.hash == "#/painting/0" && page == 0) {
+      if (location.hash == "#/gallery/0" && page == 0) {
           document.getElementById("prev").style.display = "none";
       }
       else {
