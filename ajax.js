@@ -18,17 +18,16 @@ function getMethodName() {
   
   methodName = "getLatestPaintings";
   var str;
-  // get #/blah/this/0
-  str = location.hash.split("#/").pop();
-  str = str.substring(0, str.indexOf("/"));
-  str = location.hash.split("#/" + str + "/").pop();
-  i = str.substring(0, str.indexOf("/"));
-
   // if /gallery/
   str = location.hash.split("#/").pop();
   str = str.substring(0, str.indexOf("/"));
+ 
   if (str == "gallery") {
-  
+  // get #/blah/this/0
+  str = location.hash.split("#/").pop();
+  str = str.substring(0, str.indexOf("/"));
+  i = location.hash.split("#/" + str + "/").pop();
+
     if (i == 0) {
       methodName = "getLatestPaintings";
     }
@@ -41,7 +40,7 @@ function getMethodName() {
     if (i == 3) {
       methodName = "getMostFavoritedPaintings";
     }
-    //the following is not avaliable on the 
+    //the following is not avaliable on the official app
     if (i == 4) {
       methodName = "getMostCommentedPaintings";
     }
@@ -49,6 +48,7 @@ function getMethodName() {
     if (methodName != methodPrev) {
       page = 0;
     }
+ return methodName;
   }
 
 //else painting or user gallery
