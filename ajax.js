@@ -11,23 +11,33 @@
 var images;
 var page;
 var methodName;
+var methodPrev;
+
+// get #/this/blah
+var getHashMain = function() {
+  var str;
+  str = location.hash.split("#/").pop();
+  str = str.substring(0, str.indexOf("/"));
+  return str;
+};
+
+// get #/blah/this
+var getHashNumber = function() {
+  var str;
+  str = location.hash.split("#/").pop();
+  str = str.substring(0, str.indexOf("/"));
+  str = location.hash.split("#/" + str + "/").pop();
+  return str;
+};
 
 function getMethodName() {
   var i;
-  var methodPrev = methodName;
-  
-  methodName = "getLatestPaintings";
-  var str;
-  // if /gallery/
-  str = location.hash.split("#/").pop();
-  str = str.substring(0, str.indexOf("/"));
- 
-  if (str == "gallery") {
-  // get #/blah/this/0
-  str = location.hash.split("#/").pop();
-  str = str.substring(0, str.indexOf("/"));
-  i = location.hash.split("#/" + str + "/").pop();
+  var methodPrev = methodName; //save old methodname
+  methodName = "getLatestPaintings"; //fallback
 
+  // #/gallery/
+  if (getHashMain() == "gallery") {
+    i = getHashNumber();
     if (i == 0) {
       methodName = "getLatestPaintings";
     }
@@ -44,14 +54,16 @@ function getMethodName() {
     if (i == 4) {
       methodName = "getMostCommentedPaintings";
     }
-  
-    if (methodName != methodPrev) {
-      page = 0;
-    }
- return methodName;
   }
 
-//else painting or user gallery
+  //else painting or user gallery
+
+  //if method changed, set page to 0
+  if (methodName != methodPrev) {
+    page = 0;
+  }
+
+  return methodName;
 }
 
 function ajax(parameters) {
