@@ -30,12 +30,12 @@ var getHashNumber = function() {
   return str;
 };
 
-function getMethodName() {
+var getMethodName = function() {
   var i;
   var methodPrev = methodName; //save old methodname
   methodName = "getLatestPaintings"; //fallback
 
-  // #/gallery/
+  // if "#/gallery/"
   if (getHashMain() == "gallery") {
     i = getHashNumber();
     if (i == 0) {
@@ -56,6 +56,10 @@ function getMethodName() {
     }
   }
 
+  if (getHashMain() == "user") {
+    methodName = "getUserPaintings";
+  }
+
   //else painting or user gallery
 
   //if method changed, set page to 0
@@ -64,7 +68,7 @@ function getMethodName() {
   }
 
   return methodName;
-}
+};
 
 function ajax(parameters) {
   return new Promise(function(resolve, reject) {
@@ -109,15 +113,22 @@ function ajax(parameters) {
   });
 }
 function ajaxLoad() {
+  var parameters;
+  var name = getHashNumber();
   getMethodName();
+  if (getMethodName() == "getUserPaintings") {
+    parameters = [(0 + page * 16), "16", name, "1"];
+  } else {
+  parameters = [(0 + page * 16), "16", "1"];
+  }
   ajax({
     "url": "http://www.psykopaint.com/php/dataservice/amfservices/?contentType=application/json",
     "type": "POST",
     "dataType": "JSON",
     "data": JSON.stringify({
       "serviceName": "Main",
-      "methodName": methodName,
-      "parameters": [(0 + page * 16), "16", "1"]
+      "methodName": getMethodName(),
+      "parameters": parameters
     })
   }).then(function(result) {
     images = result;
