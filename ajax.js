@@ -11,6 +11,7 @@
 var images;
 var page;
 var methodName;
+methodName = "getLatestPaintings"; //fallback
 var methodPrev;
 
 // get #/this/blah
@@ -32,8 +33,7 @@ var getHashNumber = function() {
 
 var getMethodName = function() {
   var i;
-  var methodPrev = methodName; //save old methodname
-  methodName = "getLatestPaintings"; //fallback
+  methodPrev = methodName; //save old methodname
 
   // if "#/gallery/"
   if (getHashMain() == "gallery") {
@@ -60,13 +60,12 @@ var getMethodName = function() {
     methodName = "getUserPaintings";
   }
 
-  //else painting or user gallery
+  //else use already established methodName
 
   //if method changed, set page to 0
   if (methodName != methodPrev) {
     page = 0;
   }
-
   return methodName;
 };
 
