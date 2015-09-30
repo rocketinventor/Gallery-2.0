@@ -122,27 +122,52 @@
     </div>
   </div>
   <script>
+  /*
+        global page
+        global nextPage
+        global prevPage
+        global impress
+        global ajaxLoad
+        global getMethodName
+        global methodPrev
+        global getHashMain
+        */
+    var isOverview = function () {
+      // old method
+      // return (getHashMain() == "gallery" || "user") || (getHashMain() == "painting" && getHashNumber() == "0");
+
+      // new method
+      return ((' ' + document.getElementById("0").className + ' ').indexOf(' ' + "present" + ' ') > -1);
+    };
+    
     function locationHashChanged() {
-      if (location.hash == "#/gallery/0" && page == 0) {
-          document.getElementById("prev").style.display = "none";
+      if (getMethodName() != methodPrev) {
+        ajaxLoad();
+      }
+      if (isOverview() && page == 0) {
+        document.getElementById("prev").style.display = "none";
       }
       else {
-        //hide button if there are no more prev slides
-        // if (location.hash == "#/painting/step-1" && page == 0) {
-        //   document.getElementById("prev").style.display = "none";
-        // } else
-        // //otherwise, show the button
-        // {
-          document.getElementById("prev").style.display = "block";
-        // }
+        document.getElementById("prev").style.display = "block";
       }
     }
+    
+    // run onHashChange(); under correct conditions
     window.onhashchange = locationHashChanged;
-    locationHashChanged();
-  
+    // window.addEventListener("load", locationHashChanged());
+    // 
+    // The above function seems to run too early for its own good
+    // resulting in the following error:
+    // "Uncaught TypeError: Cannot read property 'className' of null"
+    // (apperently, the styles aren't loading quick enough)
+    // 
+    // Please contact me if you know of a way to load it _after_ the point
+    // where it generates errors but still runs without requiring the user to do
+    // some action!
+    
     document.getElementById("next").addEventListener("click", function() {
       locationHashChanged();
-      if (window.location.hash == "#/painting/0") {
+      if (isOverview()) {
         nextPage();
       }
       else {
@@ -157,7 +182,7 @@
 
     document.getElementById("prev").addEventListener("click", function() {
       locationHashChanged();
-      if (window.location.hash == "#/painting/0") {
+      if (isOverview()) {
         prevPage();
       }
       else {
