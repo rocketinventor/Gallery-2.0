@@ -306,13 +306,14 @@ function startPres(document, window) {
         //switch from thumbnail image to full res
         //for current image, and before image, and after too
         //the URL's are from the ajax.js generated array
-       if (location.hash != "#/painting/0") {
+      
+       if (getHashMain() == "painting" && getHashNumber() != "0") {
          for (var x = -1; x <= 1; x++) {
            //get step #from url
            //it's current state is a hack to get the slide #
            //it will have to be rewritten to get the slide id internally (from variable)
            //also on the overview, I want it to switch back to thumnail sized images
-           var i = parseInt(window.location.hash.replace("#/painting/step-", ""), 0) - 1 + x;
+           var i = parseInt(getHashNumber().replace("step-", ""), 0) - 1 + x;
            document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + images[i].imageURL + ')';
            //set height and width
            document.getElementById("P" + (i + 1)).style.height = images[i].height;
@@ -679,7 +680,10 @@ function startPres(document, window) {
         // makes transtion laggy.
         // BUG: http://code.google.com/p/chromium/issues/detail?id=62820
         root.addEventListener("impress:stepenter", function(event) {
-          window.location.hash = lastHash = "#/painting/" + event.target.id; //make url scheme similar to psykopaint
+          
+          if (getHashMain() == "painting") {
+            window.location.hash = lastHash = "#/" + getHashMain() + "/" + event.target.id;
+          } //make url scheme similar to psykopaint
         }, false);
 
         window.addEventListener("hashchange", function() {
