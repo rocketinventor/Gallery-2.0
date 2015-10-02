@@ -292,6 +292,7 @@ function startPres(document, window) {
 
       // reference to last entered step
       var lastEntered = null;
+      var lastStep;
 
       // `onStepEnter` is called whenever the step element is entered
       // but the event is triggered only if the step is different than
@@ -306,8 +307,10 @@ function startPres(document, window) {
         //switch from thumbnail image to full res
         //for current image, and before image, and after too
         //the URL's are from the ajax.js generated array
-      
        if (getHashMain() == "painting" && getHashNumber() != "0") {
+         lastStep = parseInt(getHashNumber().replace("step-", ""), 0);
+         document.getElementById("UT" + lastStep).style.display="block";
+         document.getElementById("U" + lastStep).style.display="block";
          for (var x = -1; x <= 1; x++) {
            //get step #from url
            //it's current state is a hack to get the slide #
@@ -330,6 +333,10 @@ function startPres(document, window) {
           triggerEvent(step, "impress:stepleave");
           lastEntered = null;
         }
+        if (getHashMain() == "painting") {
+          document.getElementById("UT" + lastStep).style.display = "none";
+          document.getElementById("U" + lastStep).style.display = "none";
+      }
       };
 
       // `initStep` initializes given step element by reading data from its
