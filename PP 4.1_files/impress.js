@@ -153,10 +153,14 @@ function startPres(document, window) {
     // `getElementFromHash` returns an element located by id from hash part of
     // window location.
     var getElementFromHash = function() {
-      // get id from url # by removing `#/painting/` from the beginning
-      return byId(window.location.hash.replace("#/painting/", ""));
+      if (getHashMain() == "painting") {
+        return document.getElementsByClassName("step")[getHashNumber()];
+      }
+      else {
+        return document.getElementsByClassName("step")[0];
+      }
     };
-
+    
     // `computeWindowScale` counts the scale factor between window size and size
     // defined for the presentation in the config.
     var computeWindowScale = function(config) {
