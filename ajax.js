@@ -166,12 +166,11 @@ function ajaxLoad() {
 
     //This sets the paintings to thier thumnails images
     for (var i = 0; i < result.length; i++) {
-      document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL50 + ')';
+      document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL200 + ')';
     }
 
     //Set the first picture to full res
     document.getElementById("P1").style.backgroundImage = 'url(' + images[0].imageURL + ')';
-
   });
 }
 
