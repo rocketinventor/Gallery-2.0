@@ -333,7 +333,7 @@ function startPres(document, window) {
           triggerEvent(step, "impress:stepleave");
           lastEntered = null;
         }
-        if (getHashMain() == "painting") {
+        if (getHashMain() == "painting" && !(typeof lastStep === 'undefined')) {
           document.getElementById("UT" + lastStep).style.display = "none";
           document.getElementById("U" + lastStep).style.display = "none";
       }
