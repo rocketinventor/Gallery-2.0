@@ -8,10 +8,8 @@ body {
   margin: 0;
   font-family: "WarugakiRegular";
   font-size: 19px;
-  line-height: 1.4;
   color: #363636;
   background-color: #000000;
-  letter-spacing: 1px;
 }
 
 @font-face {
