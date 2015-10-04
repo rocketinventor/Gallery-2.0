@@ -38,3 +38,73 @@ html,
 body {
   background: #e5e5e5 url('../bgWood.jpg');
 }
+
+.bg-custom-3ea2dd {
+  background: #3ea2dd;
+}
+
+.slideContainer {
+  background-color: #C0C0C0;
+  background-size: cover;
+}
+
+.nav {
+  position: relative;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.invert {
+  transition: -webkit-filter .5s, filter .5s;
+  filter: invert(0);
+  -webkit-filter: invert(0);
+  -moz-filter: invert(0);
+  -o-filter: invert(0);
+  -ms-filter: invert(0);
+}
+
+img.invert:hover {
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+  -moz-filter: invert(100%);
+  -o-filter: invert(100%);
+  -ms-filter: invert(100%);
+}
+
+.float-left {
+  float: left
+}
+
+.float-right {
+  float: right
+}
+
+.reveal.themedArea {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.componentContainer {
+  position: absolute;
+  line-height: normal;
+  /*-webkit-transform-origin: 135% 135%;
+    -moz-transform-origin: 135% 135%;
+    transform-origin: 135% 135%;*/
+}
+
+.transformContainer {
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+}
