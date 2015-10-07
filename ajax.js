@@ -68,7 +68,7 @@ var getMethodName = function() {
   }
   return methodName;
 };
-
+/*global contentLoad*/
 function ajax(parameters) {
   return new Promise(function(resolve, reject) {
     var xhr = new XMLHttpRequest();
@@ -131,34 +131,9 @@ function ajaxLoad() {
     })
   }).then(function(result) {
     images = result;
-    console.log(result);
-    var firstPaintingsId = result[0].id;
-    console.log(firstPaintingsId);
     console.log("Page " + page);
-
-
-   //This makes the user info and thumbnails hidden
-   for (var i = 0; i < result.length; i++) {
-     document.getElementById("U" + (i + 1)).style.display = "none";
-     document.getElementById("UT" + (i + 1)).style.display = "none";
-   }
-    //This adds the usenames to the page
-    for (var i = 0; i < result.length; i++) {
-      document.getElementById("U" + (i + 1)).innerHTML = result[i].user_name;
-    }
-
-    //this creates the user thumnails in the DOM using the array
-    for (var i = 0; i < result.length; i++) {
-      document.getElementById("UT" + (i + 1)).src = result[i].user_thumbnailURL;
-    }
-
-    //This sets the paintings to thier thumnails images
-    for (var i = 0; i < result.length; i++) {
-      document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL200 + ')';
-    }
-
-    //Set the first picture to full res
-    document.getElementById("P1").style.backgroundImage = 'url(' + images[0].imageURL + ')';
+    console.log(result);
+    contentLoad(result);
   });
 }
 
