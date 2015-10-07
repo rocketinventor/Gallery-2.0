@@ -136,24 +136,6 @@ function ajaxLoad() {
     console.log(firstPaintingsId);
     console.log("Page " + page);
 
-    //These will set values for the original image urls
-    var Org1 = result[0].originalURL;
-    var Org2 = result[1].originalURL;
-    var Org3 = result[2].originalURL;
-    var Org4 = result[3].originalURL;
-    var Org5 = result[4].originalURL;
-    var Org6 = result[5].originalURL;
-    var Org7 = result[6].originalURL;
-    var Org8 = result[7].originalURL;
-    var Org9 = result[8].originalURL;
-    var Org10 = result[9].originalURL;
-    var Org11 = result[10].originalURL;
-    var Org12 = result[11].originalURL;
-    var Org13 = result[12].originalURL;
-    var Org14 = result[13].originalURL;
-    var Org15 = result[14].originalURL;
-    var Org16 = result[15].originalURL;
-
 
    //This makes the user info and thumbnails hidden
    for (var i = 0; i < result.length; i++) {
