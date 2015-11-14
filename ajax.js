@@ -121,7 +121,7 @@ function ajaxLoad() {
   parameters = [(0 + page * 16), "16", "1"];
   }
   ajax({
-    "url": "http://www.psykopaint.com/php/dataservice/amfservices/?contentType=application/json",
+    "url": "https://www.psykopaint.com/php/dataservice/amfservices/?contentType=application/json",
     "type": "POST",
     "dataType": "JSON",
     "data": JSON.stringify({
