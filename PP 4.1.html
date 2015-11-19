@@ -42,24 +42,24 @@
     </div>
   </div>
   <script>
-  /*
-        global page
-        global nextPage
-        global prevPage
-        global impress
-        global ajaxLoad
-        global getMethodName
-        global methodPrev
-        global getHashMain
-        */
-    var isOverview = function () {
+    /*
+    global page
+    global nextPage
+    global prevPage
+    global impress
+    global ajaxLoad
+    global getMethodName
+    global methodPrev
+    global getHashMain
+    */
+    var isOverview = function() {
       // old method
       // return (getHashMain() == "gallery" || "user") || (getHashMain() == "painting" && getHashNumber() == "0");
 
       // new method
       return ((' ' + document.getElementById("0").className + ' ').indexOf(' ' + "present" + ' ') > -1);
     };
-    
+
     function locationHashChanged() {
       if (getMethodName() != methodPrev) {
         ajaxLoad();
@@ -71,7 +71,7 @@
         document.getElementById("prev").style.display = "block";
       }
     }
-    
+
     // run onHashChange(); under correct conditions
     window.onhashchange = locationHashChanged;
     // window.addEventListener("load", locationHashChanged());
@@ -84,7 +84,7 @@
     // Please contact me if you know of a way to load it _after_ the point
     // where it generates errors but still runs without requiring the user to do
     // some action!
-    
+
     document.getElementById("next").addEventListener("click", function() {
       locationHashChanged();
       if (isOverview()) {
@@ -121,190 +121,191 @@
       locationHashChanged();
     });
   </script>
-    <div class="bg innerBg">
-      <div id="impress">
-        <div>
-          
-          <div id="0" class="step" data-state="overview" data-x="7300" data-y="5000" data-scale="10"></div>
+  <div class="bg innerBg">
+    <div id="impress">
+      <div>
 
-          <div class="step" data-x="3500" data-y="2000" data-scale="2" id="step-1">
-            <div class="slideContainer" id="P1">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT1">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U1"></div>
-              </div>
+        <div id="0" class="step" data-state="overview" data-x="7300" data-y="5000" data-scale="10"></div>
+
+        <div class="step" data-x="3500" data-y="2000" data-scale="2" id="step-1">
+          <div class="slideContainer" id="P1">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT1">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U1"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="6000" data-y="2000" data-scale="2" id="step-2">
-            <div class="slideContainer" id="P2">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT2">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U2"></div>
-              </div>
+        <div class="step" data-x="6000" data-y="2000" data-scale="2" id="step-2">
+          <div class="slideContainer" id="P2">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT2">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U2"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="8500" data-y="2000" data-scale="2" id="step-3">
-            <div class="slideContainer" id="P3">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT3">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U3"></div>
-              </div>
+        <div class="step" data-x="8500" data-y="2000" data-scale="2" id="step-3">
+          <div class="slideContainer" id="P3">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT3">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U3"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="11000" data-y="2000" data-scale="2" id="step-4">
-            <div class="slideContainer" id="P4">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT4">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U4"></div>
-              </div>
+        <div class="step" data-x="11000" data-y="2000" data-scale="2" id="step-4">
+          <div class="slideContainer" id="P4">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT4">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U4"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="3500" data-y="4000" data-scale="2" id="step-5">
-            <div class="slideContainer" id="P5">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT5">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U5"></div>
-              </div>
+        <div class="step" data-x="3500" data-y="4000" data-scale="2" id="step-5">
+          <div class="slideContainer" id="P5">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT5">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U5"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="6000" data-y="4000" data-scale="2" id="step-6">
-            <div class="slideContainer" id="P6">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT6">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U6"></div>
-              </div>
+        <div class="step" data-x="6000" data-y="4000" data-scale="2" id="step-6">
+          <div class="slideContainer" id="P6">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT6">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U6"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="8500" data-y="4000" data-scale="2" id="step-7">
-            <div class="slideContainer" id="P7">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT7">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U7"></div>
-              </div>
+        <div class="step" data-x="8500" data-y="4000" data-scale="2" id="step-7">
+          <div class="slideContainer" id="P7">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT7">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U7"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="11000" data-y="4000" data-scale="2" id="step-8">
-            <div class="slideContainer" id="P8">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT8">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U8"></div>
-              </div>
+        <div class="step" data-x="11000" data-y="4000" data-scale="2" id="step-8">
+          <div class="slideContainer" id="P8">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT8">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U8"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="3500" data-y="6000" data-scale="2" id="step-9">
-            <div class="slideContainer" id="P9">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT9">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U9"></div>
-              </div>
+        <div class="step" data-x="3500" data-y="6000" data-scale="2" id="step-9">
+          <div class="slideContainer" id="P9">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT9">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U9"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="6000" data-y="6000" data-scale="2" id="step-10">
-            <div class="slideContainer" id="P10">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT10">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U10"></div>
-              </div>
+        <div class="step" data-x="6000" data-y="6000" data-scale="2" id="step-10">
+          <div class="slideContainer" id="P10">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT10">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U10"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="8500" data-y="6000" data-scale="2" id="step-11">
-            <div class="slideContainer" id="P11">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT11">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U11"></div>
-              </div>
+        <div class="step" data-x="8500" data-y="6000" data-scale="2" id="step-11">
+          <div class="slideContainer" id="P11">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT11">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U11"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="11000" data-y="6000" data-scale="2" id="step-12">
-            <div class="slideContainer" id="P12">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT12">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U12"></div>
-              </div>
+        <div class="step" data-x="11000" data-y="6000" data-scale="2" id="step-12">
+          <div class="slideContainer" id="P12">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT12">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U12"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="3500" data-y="8000" data-scale="2" id="step-13">
-            <div class="slideContainer" id="P13">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT13">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U13"></div>
-              </div>
+        <div class="step" data-x="3500" data-y="8000" data-scale="2" id="step-13">
+          <div class="slideContainer" id="P13">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT13">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U13"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="6000" data-y="8000" data-scale="2" id="step-14">
-            <div class="slideContainer" id="P14">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT14">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U14"></div>
-              </div>
+        <div class="step" data-x="6000" data-y="8000" data-scale="2" id="step-14">
+          <div class="slideContainer" id="P14">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT14">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U14"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="8500" data-y="8000" data-scale="2" id="step-15">
-            <div class="slideContainer" id="P15">
-              <div class="componentContainer " style="top: 634px; left: 892px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT15">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
-                <div style="font-size: 22px;" class="antialias" id="U15"></div>
-              </div>
+        <div class="step" data-x="8500" data-y="8000" data-scale="2" id="step-15">
+          <div class="slideContainer" id="P15">
+            <div class="componentContainer " style="top: 634px; left: 892px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT15">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 604px; left: 892px;">
+              <div style="font-size: 22px;" class="antialias" id="U15"></div>
             </div>
           </div>
+        </div>
 
-          <div class="step" data-x="11000" data-y="8000" data-scale="2" id="step-16">
-            <div class="slideContainer" id="P16">
-              <div class="componentContainer " style="top: 650px; left: 913px;">
-                <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT16">
-              </div>
-              <div class="componentContainer transformContainer" style="top: 620px; left: 913px;">
-                <div style="font-size: 22px;" class="antialias" id="U16"></div>
-              </div>
+        <div class="step" data-x="11000" data-y="8000" data-scale="2" id="step-16">
+          <div class="slideContainer" id="P16">
+            <div class="componentContainer " style="top: 650px; left: 913px;">
+              <img src="https://images.psykopaint.com/profile/thumbnail/13535777631388146404.jpg" id="UT16">
+            </div>
+            <div class="componentContainer transformContainer" style="top: 620px; left: 913px;">
+              <div style="font-size: 22px;" class="antialias" id="U16"></div>
             </div>
           </div>
         </div>
 
       </div>
     </div>
+  </div>
 </body>
+
 </html>
