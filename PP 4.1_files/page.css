@@ -38,10 +38,6 @@ body {
   background: #e5e5e5 url('../bgWood.jpg');
 }
 
-.bg-custom-3ea2dd {
-  background: #3ea2dd;
-}
-
 .slideContainer {
   background-color: #C0C0C0;
   background-size: cover;
@@ -92,9 +88,6 @@ img.invert:hover {
 .componentContainer {
   position: absolute;
   line-height: normal;
-  /*-webkit-transform-origin: 135% 135%;
-    -moz-transform-origin: 135% 135%;
-    transform-origin: 135% 135%;*/
 }
 
 .transformContainer {
