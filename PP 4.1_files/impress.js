@@ -323,8 +323,10 @@ function startPres(document, window) {
            var i = parseInt(getHashNumber().replace("step-", ""), 0) - 1 + x;
            document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + images[i].imageURL + ')';
            //set height and width
-           document.getElementById("P" + (i + 1)).style.height = images[i].height;
-           document.getElementById("P" + (i + 1)).style.width = images[i].width;
+           if (x==0) {
+             document.getElementById("P" + (i + 1)).style.height = images[i].height + "px";
+             document.getElementById("P" + (i + 1)).style.width = images[i].width + "px";
+           }
          }
        }
       };
