@@ -85,4 +85,12 @@ body {
     transition:         opacity 1s;
 }
 
+.slideContainer {
+    -webkit-transition: width .5s, height .5s;
+    -moz-transition:    width .5s, height .5s;
+    -ms-transition:     width .5s, height .5s;
+    -o-transition:      width .5s, height .5s;
+    transition:         width .5s, height .5s;
+}
+
 .impress-enabled .step.active { opacity: 1 }
