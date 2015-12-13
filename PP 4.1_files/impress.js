@@ -324,8 +324,8 @@ function startPres(document, window) {
            document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + images[i].imageURL + ')';
            //set height and width
            if (x==0) {
-             document.getElementById("P" + (i + 1)).style.height = images[i].height + "px";
-             document.getElementById("P" + (i + 1)).style.width = images[i].width + "px";
+             document.getElementById("P" + (i + 1)).style.height = document.getElementById("P" + (i + 1)).dataset.height + "px";
+             document.getElementById("P" + (i + 1)).style.width = document.getElementById("P" + (i + 1)).dataset.width + "px";
            }
          }
        }
@@ -921,4 +921,10 @@ function contentLoad(result) {
 
   //Set the first picture to full res
   document.getElementById("P1").style.backgroundImage = 'url(' + result[0].imageURL + ')';
+  
+  //Set attributes for height and width
+  for (var i = 0; i < result.length; i++) {
+    document.getElementById("P" + (i + 1)).dataset.height = result[i].height;
+    document.getElementById("P" + (i + 1)).dataset.width = result[i].width;
+  }
 }
