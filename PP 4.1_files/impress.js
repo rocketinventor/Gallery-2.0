@@ -896,35 +896,28 @@ function startPres(document, window) {
 }
 
 
-// function for setting content with ajax call
+// Function for setting content with ajax call
 function contentLoad(result) {
-  //This makes the user info and thumbnails hidden
-  for (var i = 0; i < result.length; i++) {
+  result.forEach(function(data, i) {
+    // This makes the user info and thumbnails are hidden
     document.getElementById("U" + (i + 1)).style.display = "none";
     document.getElementById("UT" + (i + 1)).style.display = "none";
-  }
-  
-  //This adds the usenames to the page
-  for (var i = 0; i < result.length; i++) {
-    document.getElementById("U" + (i + 1)).innerHTML = result[i].user_name;
-  }
 
-  //this creates the user thumnails in the DOM using the array
-  for (var i = 0; i < result.length; i++) {
-    document.getElementById("UT" + (i + 1)).src = result[i].user_thumbnailURL;
-  }
+    // This adds the usenames to the page
+    document.getElementById("U" + (i + 1)).innerHTML = data.user_name;
 
-  //This sets the paintings to thier thumnails images
-  for (var i = 0; i < result.length; i++) {
-    document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + result[i].thumbnailURL200 + ')';
-  }
+    // Create the user thumnails in the DOM using the array
+    document.getElementById("UT" + (i + 1)).src = data.user_thumbnailURL;
+
+    //This sets the paintings to thier thumnails images
+    document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + data.thumbnailURL200 + ')';
+
+    // Set attributes for height and width
+    document.getElementById("P" + (i + 1)).dataset.height = data.height;
+    document.getElementById("P" + (i + 1)).dataset.width = data.width;
+  });
 
   //Set the first picture to full res
   document.getElementById("P1").style.backgroundImage = 'url(' + result[0].imageURL + ')';
-  
-  //Set attributes for height and width
-  for (var i = 0; i < result.length; i++) {
-    document.getElementById("P" + (i + 1)).dataset.height = result[i].height;
-    document.getElementById("P" + (i + 1)).dataset.width = result[i].width;
-  }
+
 }
