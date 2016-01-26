@@ -16,19 +16,14 @@ var methodPrev;
 
 // get #/this/blah
 var getHashMain = function() {
-  var str;
-  str = location.hash.split("#/").pop();
-  str = str.substring(0, str.indexOf("/"));
-  return str;
+  // Get first portion of url hash
+  return location.hash.split("#/").pop().split("/")[0];
 };
 
 // get #/blah/this
 var getHashNumber = function() {
-  var str;
-  str = location.hash.split("#/").pop();
-  str = str.substring(0, str.indexOf("/"));
-  str = location.hash.split("#/" + str + "/").pop();
-  return str;
+  // Get last portion of url hash
+  return location.hash.split("#/").pop().split("/").pop();
 };
 
 var getMethodName = function() {
