@@ -899,22 +899,27 @@ function startPres(document, window) {
 // Function for setting content with ajax call
 function contentLoad(result) {
   result.forEach(function(data, i) {
+    // Define references for the elements we will be using
+    var U = document.getElementById("U" + (i + 1));
+    var UT = document.getElementById("UT" + (i + 1));
+    var P = document.getElementById("P" + (i + 1));
+    
     // This makes the user info and thumbnails are hidden
-    document.getElementById("U" + (i + 1)).style.display = "none";
-    document.getElementById("UT" + (i + 1)).style.display = "none";
+    U.style.display = "none";
+    UT.style.display = "none";
 
     // This adds the usenames to the page
-    document.getElementById("U" + (i + 1)).innerHTML = data.user_name;
+    U.innerHTML = data.user_name;
 
     // Create the user thumnails in the DOM using the array
-    document.getElementById("UT" + (i + 1)).src = data.user_thumbnailURL;
+    UT.src = data.user_thumbnailURL;
 
     //This sets the paintings to thier thumnails images
-    document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + data.thumbnailURL200 + ')';
+    P.style.backgroundImage = 'url(' + data.thumbnailURL200 + ')';
 
     // Set attributes for height and width
-    document.getElementById("P" + (i + 1)).dataset.height = data.height;
-    document.getElementById("P" + (i + 1)).dataset.width = data.width;
+    P.dataset.height = data.height;
+    P.dataset.width = data.width;
   });
 
   //Set the first picture to full res
