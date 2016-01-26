@@ -920,6 +920,9 @@ function contentLoad(result) {
     // Set attributes for height and width
     P.dataset.height = data.height;
     P.dataset.width = data.width;
+
+    // Set painting id data
+    P.parentNode.dataset.paintingId = data.id;
   });
 
   //Set the first picture to full res
