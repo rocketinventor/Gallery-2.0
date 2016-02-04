@@ -312,7 +312,7 @@ function startPres(document, window) {
         //for current image, and before image, and after too
         //the URL's are from the ajax.js generated array
        if (getHashMain() == "painting" && getHashNumber() != "0") {
-         lastStep = parseInt(getHashNumber().replace("step-", ""), 0);
+         lastStep = getHashNumber();
          document.getElementById("UT" + lastStep).style.display="block";
          document.getElementById("U" + lastStep).style.display="block";
          for (var x = -1; x <= 1; x++) {
@@ -320,7 +320,7 @@ function startPres(document, window) {
            //it's current state is a hack to get the slide #
            //it will have to be rewritten to get the slide id internally (from variable)
            //also on the overview, I want it to switch back to thumnail sized images
-           var i = parseInt(getHashNumber().replace("step-", ""), 0) - 1 + x;
+           var i = parseInt(getHashNumber(), 0) - 1 + x;
            document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + images[i].imageURL + ')';
            //set height and width
            if (x==0) {
@@ -365,10 +365,10 @@ function startPres(document, window) {
           };
 
         if (!el.id) {
-          el.id = "step-" + (idx + 1);
+          el.id = (idx + 1);
         }
 
-        stepsData["impress-" + el.id] = step;
+        stepsData[el.id] = step;
 
         css(el, {
           position: "absolute",
@@ -479,7 +479,7 @@ function startPres(document, window) {
         else if (typeof step === "string") {
           step = byId(step);
         }
-        return (step && step.id && stepsData["impress-" + step.id]) ? step : null;
+        return (step && step.id && stepsData[step.id]) ? step : null;
       };
 
       // used to reset timeout for `impress:stepenter` event
@@ -504,7 +504,7 @@ function startPres(document, window) {
         // If you are reading this and know any better way to handle it, I'll be glad to hear about it!
         window.scrollTo(0, 0);
 
-        var step = stepsData["impress-" + el.id];
+        var step = stepsData[el.id];
 
         function updateSurface(step, operation) {
           var state = step.dataset.state;
@@ -629,7 +629,7 @@ function startPres(document, window) {
         var prev = steps.indexOf(activeStep) - 1;
         prev = prev >= 0 ? steps[prev] : steps[steps.length - 1];
 
-      if (window.location.hash=="#/painting/step-1") {
+      if (getElementFromHash().id == "1") {
         prevPage();
       }
 
@@ -641,7 +641,7 @@ function startPres(document, window) {
         var next = steps.indexOf(activeStep) + 1;
         next = next < steps.length ? steps[next] : steps[0];
 
-        if (window.location.hash=="#/painting/step-16") {
+        if (getElementFromHash().id == "16") {
           nextPage();
         }
 
@@ -686,7 +686,7 @@ function startPres(document, window) {
         // last hash detected
         var lastHash = "";
 
-        // `#/step-id` is used instead of `#step-id` to prevent default browser
+        // `#/stepId` is used instead of `#stepId` to prevent default browser
         // scrolling to element in hash.
         //
         // And it has to be set after animation finishes, because in Chrome it
