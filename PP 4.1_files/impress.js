@@ -153,8 +153,8 @@ function startPres(document, window) {
     // `getElementFromHash` returns an element located by id from hash part of
     // window location.
     var getElementFromHash = function() {
-      if (getHashMain() == "painting") {
-        return document.getElementsByClassName("step")[getHashNumber()];
+      if (getHashMain() == "painting" && getHashNumber()) {
+        return paintingById() || document.getElementsByClassName("step")[getHashNumber()];
       }
       else {
         return document.getElementsByClassName("step")[0];
@@ -693,7 +693,7 @@ function startPres(document, window) {
         root.addEventListener("impress:stepenter", function(event) {
           
           if (getHashMain() == "painting") {
-            window.location.hash = lastHash = "#/" + getHashMain() + "/" + event.target.id;
+            window.location.hash = lastHash = ("#/" + getHashMain() + "/" + (event.target.dataset.paintingId || event.target.id)) || window.location.hash;
           } //make url scheme similar to psykopaint
         }, false);
 
