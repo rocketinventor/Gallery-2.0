@@ -788,7 +788,7 @@ function startPres(document, window) {
       //   as another way to moving to next step... And yes, I know that for the sake of
       //   consistency I should add [shift+tab] as opposite action...
       document.addEventListener("keyup", function(event) {
-        if (event.keyCode === 9 || (event.keyCode >= 32 && event.keyCode <= 34) || (event.keyCode >= 37 && event.keyCode <= 40)) {
+        if (event.keyCode === 9 || (event.keyCode >= 32 && event.keyCode <= 34) || (event.keyCode >= 37 && event.keyCode <= 40) || event.keyCode == 27) {
           switch (event.keyCode) {
             case 33: // pg up
             case 37: // left
@@ -800,6 +800,9 @@ function startPres(document, window) {
             case 39: // right
             case 40: // down
               api.next();
+              break;
+            case 27: // escape
+              api.goto('0');
               break;
           }
 
@@ -883,13 +886,6 @@ function startPres(document, window) {
   //
   // I've learnt a lot when building impress.js and I hope this code and comments
   // will help somebody learn at least some part of it.
-
-
-  document.addEventListener("keydown", function(e) {
-    if (e.keyCode == 27) {
-      impress().goto('0');
-    }
-  }, false);
 
 }
 
