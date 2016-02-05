@@ -313,14 +313,13 @@ function startPres(document, window) {
         //the URL's are from the ajax.js generated array
        if (getHashMain() == "painting" && getHashNumber() != "0") {
          lastStep = getHashNumber();
-         document.getElementById("UT" + lastStep).style.display="block";
-         document.getElementById("U" + lastStep).style.display="block";
+         slideInfo(step).showInfo();
          for (var x = -1; x <= 1; x++) {
            //get step #from url
            //it's current state is a hack to get the slide #
            //it will have to be rewritten to get the slide id internally (from variable)
            //also on the overview, I want it to switch back to thumnail sized images
-           var i = parseInt(getHashNumber(), 0) - 1 + x;
+           var i = parseInt(paintingById().id, 0) - 1 + x;
            document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + images[i].imageURL + ')';
            //set height and width
            if (x==0) {
@@ -340,9 +339,8 @@ function startPres(document, window) {
           lastEntered = null;
         }
         if (getHashMain() == "painting" && !(typeof lastStep === 'undefined')) {
-          document.getElementById("UT" + lastStep).style.display = "none";
-          document.getElementById("U" + lastStep).style.display = "none";
-      }
+          slideInfo(step).hideInfo();
+        }
       };
 
       // `initStep` initializes given step element by reading data from its
@@ -928,4 +926,61 @@ function contentLoad(result) {
   //Set the first picture to full res
   document.getElementById("P1").style.backgroundImage = 'url(' + result[0].imageURL + ')';
 
+}
+
+var paintingById = function(id) {
+  id = id || getHashNumber();
+  return document.querySelector("[data-painting-id='" + id + "']");
+};
+
+function slideInfo (slide) {
+// Make sure we have data
+   slide = slide || document.querySelector(".active");
+// Make sure we have the right type of data
+  if (typeof slide != "object") {
+    slide = paintingById(slide);
+  }
+
+// Define slide index
+  var current = slide;
+  var next = null || current.nextElementSibling;
+  var previous = null || current.previousElementSibling;
+  if (previous) {
+    previous = (previous.id == "0" ? null : previous);
+  }
+
+// Define the components
+  var id = slide.id;
+  var U = document.getElementById("U" + id);
+  var UT = document.getElementById("UT" + id);
+  var P = document.getElementById("P" + id);
+  var index = {
+    "current": current,
+    "previous": previous,
+    "next": next,
+    // "0": current,
+    // "1": next,
+    // "-1": previous,
+  };
+  var components = {
+      "U": U, // Username
+      "UT": UT, // User thumnail
+      "P": P, // Container with painting
+    };
+  return {
+    index: index,
+    components: components,
+    "hideInfo": function() {
+      if (U && UT) {
+        U.style.display = "none";
+        UT.style.display = "none";
+      }
+    },
+    "showInfo": function() {
+      if (U && UT) {
+        U.style.display = "block";
+        UT.style.display = "block";
+      }
+    },
+  };
 }
