@@ -908,6 +908,9 @@ function contentLoad(result) {
     // Create the user thumnails in the DOM using the array
     UT.src = data.user_thumbnailURL;
 
+    // Make Userinfo clickable
+    U.parentNode.href = "#/user/" + data.user_id;
+
     //This sets the paintings to thier thumnails images
     P.style.backgroundImage = 'url(' + data.thumbnailURL200 + ')';
 
