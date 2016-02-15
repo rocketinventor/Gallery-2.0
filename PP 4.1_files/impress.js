@@ -126,7 +126,8 @@ function startPres(document, window) {
 
     // `translate` builds a translate transform string for given data.
     var translate = function(t) {
-      return " translate3d(" + t.x + "px," + t.y + "px," + t.z + "px) ";
+      // return " translate3d(" + t.x + "px," + t.y + "px," + t.z + "px) ";
+      return " translate(" + t.x + "px," + t.y + "px) ";
     };
 
     // `rotate` builds a rotate transform string for given data.
@@ -372,9 +373,9 @@ function startPres(document, window) {
           position: "absolute",
           transform: "translate(-50%,-50%)" +
             translate(step.translate) +
-            rotate(step.rotate) +
+            // rotate(step.rotate) +
             scale(step.scale),
-          transformStyle: "preserve-3d"
+          // transformStyle: "preserve-3d"
         });
       };
 
@@ -426,7 +427,7 @@ function startPres(document, window) {
           position: "absolute",
           transformOrigin: "top left",
           transition: "all 0s ease-in-out",
-          transformStyle: "preserve-3d"
+          // transformStyle: "preserve-3d"
         };
 
         css(root, rootStyles);
