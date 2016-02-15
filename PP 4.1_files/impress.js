@@ -321,12 +321,12 @@ function startPres(document, window) {
            //it will have to be rewritten to get the slide id internally (from variable)
            //also on the overview, I want it to switch back to thumnail sized images
            var i = parseInt(paintingById().id, 0) - 1 + x;
-           document.getElementById("P" + (i + 1)).style.backgroundImage = 'url(' + images[i].imageURL + ')';
+           var slide = document.getElementById("P" + (i + 1));
+           slide.style.backgroundImage = 'url(' + images[i].imageURL + ')';
            //set height and width
-           if (x==0) {
-             document.getElementById("P" + (i + 1)).style.height = document.getElementById("P" + (i + 1)).dataset.height + "px";
-             document.getElementById("P" + (i + 1)).style.width = document.getElementById("P" + (i + 1)).dataset.width + "px";
-           }
+          if (x==0) {
+             slideInfo(slide).properSize();
+          }
          }
        }
       };
@@ -918,6 +918,8 @@ function contentLoad(result) {
     // Set attributes for height and width
     P.dataset.height = data.height;
     P.dataset.width = data.width;
+    // Use default sizing
+    slideInfo(P).defaultSize();
 
     // Set painting id data
     P.parentNode.dataset.paintingId = data.id;
@@ -981,6 +983,14 @@ function slideInfo (slide) {
         U.style.display = "block";
         UT.style.display = "block";
       }
+    },
+    "properSize": function() {
+      slide.style.height = slide.dataset.height + "px";
+      slide.style.width = slide.dataset.width + "px";
+    },
+    "defaultSize": function () {
+      slide.style.height = "";
+      slide.style.width = "";
     },
   };
 }
