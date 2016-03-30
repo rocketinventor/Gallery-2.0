@@ -14,6 +14,11 @@ var methodName;
 methodName = "getLatestPaintings"; //fallback
 var methodPrev;
 
+// Fix empty hash on start
+if (location.hash == "") {
+  location.hash = "#/painting/0";
+}
+
 // get #/this/blah
 var getHashMain = function() {
   // Get first portion of url hash
