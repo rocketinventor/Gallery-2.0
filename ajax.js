@@ -136,6 +136,23 @@ function ajaxLoad() {
     contentLoad(result);
   });
 }
+function fetchPainting(id) {
+  return new Promise(function(resolve) {
+    ajax({
+      "url": "https://www.psykopaint.com/php/dataservice/amfservices/?contentType=application/json",
+      "dataType": "JSON",
+      "type": "POST",
+      "data": JSON.stringify({
+        "serviceName": "Main",
+        "methodName": "getPaintingsById",
+        "parameters": [id, id]
+      })
+    }).then(function(result) {
+      console.log("loaded painting, id: " + id);
+      resolve(result);
+    });
+  });
+}
 
 page = 0;
 ajaxLoad();
