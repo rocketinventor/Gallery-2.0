@@ -932,7 +932,18 @@ function contentLoad(result) {
 
 var paintingById = function(id) {
   id = id || getHashNumber();
-  return document.querySelector("[data-painting-id='" + id + "']");
+  var query = document.querySelector("[data-painting-id='" + id + "']");
+// Return the element if it exists, fetch it, then open it
+  if (query) {
+    return query;
+  }
+  else {
+    fetchPainting(id).then(function(result) {
+      contentLoad(result);
+    }).then(function() {
+      window.impress().goto("1");
+    });
+  }
 };
 
 function slideInfo (slide) {
