@@ -315,6 +315,7 @@ function startPres(document, window) {
        if (getHashMain() == "painting" && getHashNumber() != "0") {
          lastStep = getHashNumber();
          slideInfo(step).showInfo();
+         document.title = step.dataset.title;
          for (var x = -1; x <= 1; x++) {
            //get step #from url
            //it's current state is a hack to get the slide #
@@ -341,6 +342,7 @@ function startPres(document, window) {
         }
         if (getHashMain() == "painting" && !(typeof lastStep === 'undefined')) {
           slideInfo(step).hideInfo();
+          document.title = "Psykopaint Gallery and Community";
         }
       };
 
@@ -923,6 +925,9 @@ function contentLoad(result) {
 
     // Set painting id data
     P.parentNode.dataset.paintingId = data.id;
+
+    // Set painting title
+    P.parentNode.dataset.title = (data.name || "artwork") + " by " + data.user_name;
   });
 
   //Set the first picture to full res

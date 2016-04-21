@@ -94,3 +94,19 @@ body {
 }
 
 .impress-enabled .step.active { opacity: 1 }
+.step:not(.active) { cursor:pointer  }
+.step:not(.active):hover:after {
+	border: 1px solid #fc0;
+	padding: 3px 6px;
+	/*background: #fffea1;*/
+    color: whitesmoke;
+    background: #232323;
+    border-color: whitesmoke;
+	content: attr(data-title);
+    text-align: center;
+    position: absolute;
+	right: 426px;
+    bottom: -1em;
+    transform: scale(6);
+    width: 158px;
+}
