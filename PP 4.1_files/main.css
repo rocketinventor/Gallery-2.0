@@ -110,5 +110,17 @@ body {
     transform: scale(6);
     width: 158px;
 }
+.step:not(.active):hover {
+    filter: saturate(125%);
+    -webkit-filter: saturate(125%);
+    -moz-filter: saturate(125%);
+    -o-filter: saturate(125%);
+    -ms-filter: saturate(125%);
+    /*filter: brightness(1.25);*/
+    /*-webkit-filter: brightness(1.25);*/
+    /*-moz-filter: brightness(1.25);*/
+    /*-o-filter: brightness(1.25);*/
+    /*-ms-filter: brightness(1.25);*/
+}
 .active .slideInfo { display: block }
 .slideInfo { display: none }
