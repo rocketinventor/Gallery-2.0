@@ -314,7 +314,7 @@ function startPres(document, window) {
         //the URL's are from the ajax.js generated array
        if (getHashMain() == "painting" && getHashNumber() != "0") {
          lastStep = getHashNumber();
-         slideInfo(step).showInfo();
+        // slideInfo(step).showInfo();
          document.title = step.dataset.title;
          for (var x = -1; x <= 1; x++) {
            //get step #from url
@@ -341,7 +341,7 @@ function startPres(document, window) {
           lastEntered = null;
         }
         if (getHashMain() == "painting" && !(typeof lastStep === 'undefined')) {
-          slideInfo(step).hideInfo();
+          // slideInfo(step).hideInfo();
           document.title = "Psykopaint Gallery and Community";
         }
       };
@@ -901,9 +901,9 @@ function contentLoad(result) {
     var UT = document.getElementById("UT" + (i + 1));
     var P = document.getElementById("P" + (i + 1));
     
-    // This makes the user info and thumbnails are hidden
-    U.style.display = "none";
-    UT.style.display = "none";
+    // // This makes the user info and thumbnails are hidden
+    // U.style.display = "none";
+    // UT.style.display = "none";
 
     // This adds the usenames to the page
     U.innerHTML = data.user_name;

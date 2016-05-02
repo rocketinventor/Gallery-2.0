@@ -110,3 +110,5 @@ body {
     transform: scale(6);
     width: 158px;
 }
+.active .slideInfo { display: block }
+.slideInfo { display: none }
