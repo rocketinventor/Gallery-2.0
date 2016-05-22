@@ -124,3 +124,41 @@ body {
 }
 .active .slideInfo { display: block }
 .slideInfo { display: none }
+.slideInfo {
+    overflow: hidden;
+    white-space: nowrap;
+}
+.slideInfo[data-usertype]::before {
+    content: attr(data-usertype);
+    color: black;
+    background-color: whitesmoke;
+    display: block;
+    padding: 0 1em 0 1em;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+    /* top left corner */
+    position: absolute;
+    top:.7em;
+    left: -1em;
+    /* 45 deg ccw rotation */
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.slideInfo a {
+    position: absolute;
+    color: white;
+}
+.slideInfo > div {
+    position: absolute;
+    /* z-index: 3; */
+    bottom: 0;
+    text-align: center;
+    width: 6em;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}

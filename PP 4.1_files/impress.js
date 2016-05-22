@@ -928,6 +928,13 @@ function contentLoad(result) {
 
     // Set painting title
     P.parentNode.dataset.title = (data.name || "artwork") + " by " + data.user_name;
+
+    // Set user type attribute
+    var accountType = data.user_accountType;
+    if (accountType == "basic") {
+      accountType = "";
+    }
+    U.parentNode.dataset.usertype = accountType;
   });
 
   //Set the first picture to full res
