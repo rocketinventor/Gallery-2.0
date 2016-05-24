@@ -123,8 +123,8 @@ body {
     /*-ms-filter: brightness(1.25);*/
 }
 .active .slideInfo { display: block }
-.slideInfo { display: none }
 .slideInfo {
+    display: none;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -152,6 +152,10 @@ body {
 .slideInfo a {
     position: absolute;
     color: white;
+}
+.userName {
+    font-size: 20px;
+    width: 100%;
 }
 .slideInfo > div {
     position: absolute;
