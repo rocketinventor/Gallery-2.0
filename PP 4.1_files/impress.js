@@ -906,7 +906,8 @@ function contentLoad(result) {
     // UT.style.display = "none";
 
     // This adds the usenames to the page
-    U.innerHTML = data.user_name;
+    U.dataset.fullName = data.user_name;
+    U.dataset.hoverMessage = "visit " + data.user_name.split(" ")[0];
 
     // Create the user thumnails in the DOM using the array
     UT.src = data.user_thumbnailURL;

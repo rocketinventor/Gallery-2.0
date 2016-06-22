@@ -157,12 +157,19 @@ body {
     font-size: 20px;
     width: 100%;
 }
+.userName::after {
+    content: attr(data-full-name);
+    width: 90px;
+}
+.slideInfo:hover .userName::after {
+    content: attr(data-hover-message);
+}
 .slideInfo > div {
     position: absolute;
     /* z-index: 3; */
     bottom: 0;
     text-align: center;
-    width: 6em;
+    /*width: 6em;*/
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
